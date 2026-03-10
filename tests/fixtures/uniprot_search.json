@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "primaryAccession": "P02649",
+      "uniProtkbId": "APOE_HUMAN",
+      "genes": [{"geneName": {"value": "APOE"}}],
+      "proteinDescription": {
+        "recommendedName": {"fullName": {"value": "Apolipoprotein E"}}
+      },
+      "comments": [
+        {
+          "commentType": "SUBCELLULAR LOCATION",
+          "subcellularLocations": [
+            {"location": {"value": "Secreted", "id": "SL-0243"}}
+          ]
+        },
+        {
+          "commentType": "FUNCTION",
+          "texts": [{"value": "Mediates the binding, internalization, and catabolism of lipoprotein particles."}]
+        },
+        {
+          "commentType": "SIMILARITY",
+          "texts": [{"value": "Belongs to the apolipoprotein A1/A4/E family."}]
+        }
+      ],
+      "uniProtKBCrossReferences": [
+        {"database": "PDB", "id": "1BZ4"},
+        {"database": "PDB", "id": "1GS9"},
+        {"database": "AlphaFoldDB", "id": "P02649"}
+      ]
+    }
+  ]
+}

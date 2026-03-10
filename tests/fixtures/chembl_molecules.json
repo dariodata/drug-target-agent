@@ -1,0 +1,16 @@
+{
+  "molecules": [
+    {
+      "molecule_chembl_id": "CHEMBL25",
+      "pref_name": "ASPIRIN",
+      "max_phase": 4,
+      "molecule_type": "Small molecule"
+    },
+    {
+      "molecule_chembl_id": "CHEMBL100",
+      "pref_name": "COMPOUND X",
+      "max_phase": 2,
+      "molecule_type": "Small molecule"
+    }
+  ]
+}

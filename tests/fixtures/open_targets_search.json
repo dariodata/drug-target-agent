@@ -1,0 +1,10 @@
+{
+  "data": {
+    "search": {
+      "hits": [
+        {"id": "EFO_0000249", "name": "Alzheimer disease", "entity": "disease"},
+        {"id": "MONDO_0004975", "name": "Alzheimer disease", "entity": "disease"}
+      ]
+    }
+  }
+}

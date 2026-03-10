@@ -1,0 +1,23 @@
+{
+  "page_meta": {"total_count": 2},
+  "activities": [
+    {
+      "activity_id": 1,
+      "molecule_chembl_id": "CHEMBL25",
+      "target_chembl_id": "CHEMBL2169736",
+      "standard_type": "IC50",
+      "standard_value": 500.0,
+      "standard_units": "nM",
+      "pchembl_value": 6.3
+    },
+    {
+      "activity_id": 2,
+      "molecule_chembl_id": "CHEMBL100",
+      "target_chembl_id": "CHEMBL2169736",
+      "standard_type": "Ki",
+      "standard_value": 100.0,
+      "standard_units": "nM",
+      "pchembl_value": 7.0
+    }
+  ]
+}

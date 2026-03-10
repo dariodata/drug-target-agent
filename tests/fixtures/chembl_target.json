@@ -1,0 +1,10 @@
+{
+  "targets": [
+    {
+      "target_chembl_id": "CHEMBL2169736",
+      "pref_name": "Apolipoprotein E",
+      "target_type": "SINGLE PROTEIN",
+      "organism": "Homo sapiens"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>38001234</PMID>
+      <Article>
+        <ArticleTitle>APOE and Alzheimer disease: a comprehensive review</ArticleTitle>
+        <Abstract>
+          <AbstractText>Apolipoprotein E (APOE) is the strongest genetic risk factor for late-onset Alzheimer disease. The APOE4 allele increases risk while APOE2 is protective.</AbstractText>
+        </Abstract>
+        <AuthorList>
+          <Author><LastName>Smith</LastName><ForeName>John</ForeName></Author>
+          <Author><LastName>Doe</LastName><ForeName>Jane</ForeName></Author>
+        </AuthorList>
+        <Journal>
+          <Title>Nature Reviews Neuroscience</Title>
+          <JournalIssue><PubDate><Year>2025</Year><Month>Jan</Month></PubDate></JournalIssue>
+        </Journal>
+      </Article>
+    </MedlineCitation>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation>
+      <PMID>37995678</PMID>
+      <Article>
+        <ArticleTitle>Therapeutic targeting of APOE in neurodegeneration</ArticleTitle>
+        <Abstract>
+          <AbstractText>Recent advances in APOE-targeted therapies show promise for Alzheimer disease treatment.</AbstractText>
+        </Abstract>
+        <AuthorList>
+          <Author><LastName>Wang</LastName><ForeName>Li</ForeName></Author>
+        </AuthorList>
+        <Journal>
+          <Title>Cell</Title>
+          <JournalIssue><PubDate><Year>2024</Year><Month>Dec</Month></PubDate></JournalIssue>
+        </Journal>
+      </Article>
+    </MedlineCitation>
+  </PubmedArticle>
+</PubmedArticleSet>

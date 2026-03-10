@@ -1,0 +1,39 @@
+{
+  "data": {
+    "disease": {
+      "id": "EFO_0000249",
+      "name": "Alzheimer disease",
+      "associatedTargets": {
+        "count": 2847,
+        "rows": [
+          {
+            "target": {
+              "id": "ENSG00000130203",
+              "approvedSymbol": "APOE",
+              "approvedName": "apolipoprotein E",
+              "biotype": "protein_coding"
+            },
+            "score": 0.85,
+            "datatypeScores": [
+              {"id": "genetic_association", "score": 0.95},
+              {"id": "known_drug", "score": 0.7}
+            ]
+          },
+          {
+            "target": {
+              "id": "ENSG00000142192",
+              "approvedSymbol": "APP",
+              "approvedName": "amyloid beta precursor protein",
+              "biotype": "protein_coding"
+            },
+            "score": 0.82,
+            "datatypeScores": [
+              {"id": "genetic_association", "score": 0.90},
+              {"id": "literature", "score": 0.75}
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
