@@ -1,7 +1,7 @@
 """Gene Hunter agent: identifies disease-associated gene targets."""
 
 import httpx
-from openai import AsyncOpenAI
+from google import genai
 
 from src.models import GeneAssociation
 from src.tools.open_targets import search_disease, get_disease_targets
@@ -18,16 +18,15 @@ Respond concisely."""
 
 async def call_llm(prompt: str, system: str = SYSTEM_PROMPT) -> str:
     """Call the LLM for reasoning. Separated for testability."""
-    client = AsyncOpenAI()
-    response = await client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=300,
+    client = genai.Client()
+    response = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=genai.types.GenerateContentConfig(
+            system_instruction=system,
+        ),
     )
-    return response.choices[0].message.content or ""
+    return response.text or ""
 
 
 async def run_gene_hunter(

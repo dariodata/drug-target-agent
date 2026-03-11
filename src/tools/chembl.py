@@ -69,7 +69,7 @@ async def assess_compounds(
             {
                 "molecule_chembl_id": m.get("molecule_chembl_id"),
                 "pref_name": m.get("pref_name"),
-                "max_phase": m.get("max_phase", 0) or 0,
+                "max_phase": int(float(m.get("max_phase", 0) or 0)),
             }
             for m in molecules
         ],

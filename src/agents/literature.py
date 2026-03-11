@@ -2,7 +2,7 @@
 
 import json as json_mod
 import httpx
-from openai import AsyncOpenAI
+from google import genai
 
 from src.models import LiteratureEvidence
 from src.tools.pubmed import search_papers, fetch_abstracts
@@ -19,16 +19,15 @@ Respond in JSON format:
 
 async def call_llm(prompt: str, system: str = SYSTEM_PROMPT) -> str:
     """Call the LLM for literature analysis."""
-    client = AsyncOpenAI()
-    response = await client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=500,
+    client = genai.Client()
+    response = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=genai.types.GenerateContentConfig(
+            system_instruction=system,
+        ),
     )
-    return response.choices[0].message.content or ""
+    return response.text or ""
 
 
 async def run_literature_validator(

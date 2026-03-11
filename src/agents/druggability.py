@@ -1,7 +1,7 @@
 """Druggability Assessor agent: evaluates target tractability."""
 
 import httpx
-from openai import AsyncOpenAI
+from google import genai
 
 from src.models import DruggabilityProfile
 from src.tools.uniprot import fetch_protein_info
@@ -20,16 +20,15 @@ Respond with a 1-2 sentence druggability verdict."""
 
 async def call_llm(prompt: str, system: str = SYSTEM_PROMPT) -> str:
     """Call the LLM for druggability reasoning."""
-    client = AsyncOpenAI()
-    response = await client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=300,
+    client = genai.Client()
+    response = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=genai.types.GenerateContentConfig(
+            system_instruction=system,
+        ),
     )
-    return response.choices[0].message.content or ""
+    return response.text or ""
 
 
 async def run_druggability_assessor(

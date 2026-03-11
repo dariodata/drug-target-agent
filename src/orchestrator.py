@@ -1,15 +1,19 @@
 """Orchestrator: coordinates the multi-agent drug target reconnaissance pipeline."""
 
 import asyncio
+
 import sys
 
 import httpx
-from openai import AsyncOpenAI
+from google import genai
+from dotenv import load_dotenv
 
-from src.models import ReconReport, TargetReport
-from src.agents.gene_hunter import run_gene_hunter
 from src.agents.druggability import run_druggability_assessor
+from src.agents.gene_hunter import run_gene_hunter
 from src.agents.literature import run_literature_validator
+from src.models import ReconReport, TargetReport
+
+load_dotenv()
 
 SYSTEM_PROMPT = """You are a senior computational biologist synthesizing drug target findings.
 Given ranked gene targets with druggability assessments and literature evidence,
@@ -21,16 +25,15 @@ Be specific, cite evidence, and keep it to 3-5 sentences."""
 
 async def call_llm(prompt: str, system: str = SYSTEM_PROMPT) -> str:
     """Call the LLM for final synthesis."""
-    client = AsyncOpenAI()
-    response = await client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=500,
+    client = genai.Client()
+    response = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=genai.types.GenerateContentConfig(
+            system_instruction=system,
+        ),
     )
-    return response.choices[0].message.content or ""
+    return response.text or ""
 
 
 async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
@@ -49,7 +52,9 @@ async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
         # Step 2: Parallel assessment per gene
         target_reports: list[TargetReport] = []
 
-        async def assess_gene(gene):
+        async def assess_gene(gene, delay=0):
+            if delay:
+                await asyncio.sleep(delay)
             print(f"[Assessing] {gene.gene_symbol}...")
             druggability, literature = await asyncio.gather(
                 run_druggability_assessor(client, gene.gene_symbol),
@@ -58,7 +63,7 @@ async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
             return gene, druggability, literature
 
         results = await asyncio.gather(
-            *(assess_gene(gene) for gene in genes)
+            *(assess_gene(gene, delay=i * 1.5) for i, gene in enumerate(genes))
         )
 
         for gene, druggability, literature in results:
@@ -109,8 +114,8 @@ def format_report_markdown(report: ReconReport) -> str:
         lines.extend([
             f"## {i}. {t.gene_symbol} — {t.target_name}",
             "",
-            f"| Metric | Value |",
-            f"|--------|-------|",
+            "| Metric | Value |",
+            "|--------|-------|",
             f"| Association Score | {t.association_score:.3f} |",
             f"| UniProt Accession | {t.druggability.uniprot_accession} |",
             f"| Protein Class | {t.druggability.protein_class} |",
@@ -152,11 +157,15 @@ async def main():
 
     # Save outputs
     import json
-    with open("report.json", "w") as f:
+    import re
+    slug = re.sub(r"[^a-z0-9]+", "-", disease.lower()).strip("-")
+    json_path = f"report-{slug}.json"
+    md_path = f"report-{slug}.md"
+    with open(json_path, "w") as f:
         json.dump(report.model_dump(), f, indent=2)
-    with open("report.md", "w") as f:
+    with open(md_path, "w") as f:
         f.write(md)
-    print(f"\nSaved report.json and report.md")
+    print(f"\nSaved {json_path} and {md_path}")
 
 
 if __name__ == "__main__":
