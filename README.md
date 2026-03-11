@@ -36,8 +36,8 @@ Each agent has **different tools and reasoning**: Gene Hunter queries genomics d
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/drug-target-recon.git
-cd drug-target-recon
+git clone https://github.com/YOUR_USERNAME/drug-target-agent.git
+cd drug-target-agent
 cp .env.example .env
 # Edit .env with your OpenAI API key and NCBI email
 uv sync
