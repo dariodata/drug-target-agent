@@ -1,5 +1,6 @@
 """NCBI PubMed E-utilities API wrapper."""
 
+import asyncio
 import xml.etree.ElementTree as ET
 import os
 import httpx
@@ -37,8 +38,13 @@ async def search_papers(
         "retmode": "json",
         "sort": "relevance",
     }
-    resp = await client.get(ESEARCH_URL, params=params)
-    resp.raise_for_status()
+    for _attempt in range(3):
+        resp = await client.get(ESEARCH_URL, params=params)
+        if resp.status_code == 429:  # Too many requests
+            await asyncio.sleep(2)
+            continue
+        resp.raise_for_status()
+        break
     result = resp.json()["esearchresult"]
     pmids = result.get("idlist", [])
     total = int(result.get("count", 0))
@@ -128,6 +134,11 @@ async def fetch_abstracts(
         "rettype": "abstract",
         "retmode": "xml",
     }
-    resp = await client.get(EFETCH_URL, params=params)
-    resp.raise_for_status()
+    for _attempt in range(3):
+        resp = await client.get(EFETCH_URL, params=params)
+        if resp.status_code == 429:
+            await asyncio.sleep(2)
+            continue
+        resp.raise_for_status()
+        break
     return _parse_pubmed_xml(resp.text)
