@@ -1,6 +1,7 @@
 """Literature Validator agent: validates gene-disease links via PubMed."""
 
 import json as json_mod
+import re
 import httpx
 from google import genai
 
@@ -59,13 +60,16 @@ async def run_literature_validator(
         )
         prompt = f"Gene: {gene_symbol}\nDisease: {disease}\n\nAbstracts:\n{abstracts_text}\n\nClassify the evidence."
         llm_response = await call_llm(prompt)
+        # Strip markdown code fences the LLM may wrap around JSON
+        cleaned = re.sub(r"^```(?:json)?\s*\n?", "", llm_response.strip())
+        cleaned = re.sub(r"\n?```\s*$", "", cleaned).strip()
         try:
-            parsed = json_mod.loads(llm_response)
+            parsed = json_mod.loads(cleaned)
             support_level = parsed.get("support_level", "inconclusive")
             key_findings = parsed.get("key_findings", "")
         except json_mod.JSONDecodeError:
             support_level = "inconclusive"
-            key_findings = llm_response
+            key_findings = cleaned
     else:
         support_level = "inconclusive"
         key_findings = "No papers found for this gene-disease pair."

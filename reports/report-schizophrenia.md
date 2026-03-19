@@ -20,12 +20,7 @@
 
 **Druggability:** DRD2 is a highly druggable target, being a well-characterized GPCR located at the cell membrane with numerous known ligands, including compounds in Phase 4 clinical development, and multiple available 3D structures supporting structure-based drug design.
 
-**Literature:** ```json
-{
-  "support_level": "supporting",
-  "key_findings": "Large-scale genome-wide association studies (GWAS) have identified DRD2 as a significant locus associated with schizophrenia. Specific DRD2 polymorphisms are linked to increased risk for schizophrenia, including treatment-resistant forms, and are associated with altered brain function in intermediate phenotypes. Functional studies further highlight the role of DRD2 in neural circuits regulating social behavior, a core symptom of the disorder."
-}
-```
+**Literature:** Large-scale genome-wide association studies (GWAS) have identified DRD2 as a significant locus associated with schizophrenia. Specific DRD2 polymorphisms are linked to increased risk for schizophrenia, including treatment-resistant forms, and are associated with altered brain function in intermediate phenotypes. Functional studies further highlight the role of DRD2 in neural circuits regulating social behavior, a core symptom of the disorder.
 
 **PMIDs:** 25056061, 36980961, 37777856
 
@@ -46,12 +41,7 @@
 
 **Druggability:** As a scaffold protein involved in protein-protein interactions, primarily localized intracellularly, and with no known ligands or compounds in clinical development, SHANK3 appears to be a challenging target for traditional small molecule drug discovery.
 
-**Literature:** ```json
-{
-  "support_level": "supporting",
-  "key_findings": "SHANK3 is strongly implicated in schizophrenia through various mechanisms. Its promoter is hypermethylated in peripheral blood cells of first-episode schizophrenia patients, correlating with negative symptoms and cortical surface area, and dysregulated in cortical interneurons. Additionally, schizophrenia-linked SHANK3 mutations (e.g., R1117X) in mouse models lead to profound synaptic defects in the prefrontal cortex, altered dendritic spine dynamics, adolescent sleep disturbances, and dopaminergic hyperactivity, supporting its critical role in the neuropathology of the disorder."
-}
-```
+**Literature:** SHANK3 is strongly implicated in schizophrenia through various mechanisms. Its promoter is hypermethylated in peripheral blood cells of first-episode schizophrenia patients, correlating with negative symptoms and cortical surface area, and dysregulated in cortical interneurons. Additionally, schizophrenia-linked SHANK3 mutations (e.g., R1117X) in mouse models lead to profound synaptic defects in the prefrontal cortex, altered dendritic spine dynamics, adolescent sleep disturbances, and dopaminergic hyperactivity, supporting its critical role in the neuropathology of the disorder.
 
 **PMIDs:** 37211699, 37532012, 37144901
 
@@ -72,12 +62,7 @@
 
 **Druggability:** RTN4R, as a cell membrane receptor with existing 3D structures, possesses good targetability for drug discovery. However, the complete absence of known bioactive compounds or clinical programs indicates its druggability, particularly for small molecules, remains unproven.
 
-**Literature:** ```json
-{
-  "support_level": "inconclusive",
-  "key_findings": "While some studies found no significant association between common RTN4R polymorphisms and schizophrenia in specific populations (Chinese, Korean), others identified rare coding variants in RTN4R associated with the disease. These rare variants were shown to functionally impair LGI1-NgR1 signaling and affect growth cone formation in vitro, suggesting RTN4R may modulate schizophrenia risk or clinical expression in a subset of patients, particularly through rare, impactful variants."
-}
-```
+**Literature:** While some studies found no significant association between common RTN4R polymorphisms and schizophrenia in specific populations (Chinese, Korean), others identified rare coding variants in RTN4R associated with the disease. These rare variants were shown to functionally impair LGI1-NgR1 signaling and affect growth cone formation in vitro, suggesting RTN4R may modulate schizophrenia risk or clinical expression in a subset of patients, particularly through rare, impactful variants.
 
 **PMIDs:** 18043741, 27468420, 28892071
 
@@ -98,12 +83,7 @@
 
 **Druggability:** DRD3 is a highly druggable G-protein coupled receptor located on the cell membrane, a validated and favorable target class, with multiple existing 3D structures to facilitate drug design. The presence of numerous bioactive compounds, including some in Phase 2 clinical trials, further confirms its tractability and potential for drug development.
 
-**Literature:** ```json
-{
-  "support_level": "supporting",
-  "key_findings": "DRD3 polymorphisms, particularly Ser9Gly, are significantly associated with antipsychotic treatment response in schizophrenia, where the Ser allele and Ser/Ser genotype contribute to poor response in Caucasians. Evidence also links DRD3 polymorphisms to clozapine resistance in treatment-resistant schizophrenia. While some studies suggest a small, ethnically specific association with schizophrenia susceptibility (e.g., in Caucasians), others found no direct link."
-}
-```
+**Literature:** DRD3 polymorphisms, particularly Ser9Gly, are significantly associated with antipsychotic treatment response in schizophrenia, where the Ser allele and Ser/Ser genotype contribute to poor response in Caucasians. Evidence also links DRD3 polymorphisms to clozapine resistance in treatment-resistant schizophrenia. While some studies suggest a small, ethnically specific association with schizophrenia susceptibility (e.g., in Caucasians), others found no direct link.
 
 **PMIDs:** 36980961, 35835396, 9674978
 
@@ -124,12 +104,7 @@
 
 **Druggability:** MTHFR is an enzyme with available 3D structures, which are positive indicators for druggability. However, the complete absence of known bioactive compounds or clinical candidates suggests this target is underexplored or poses significant challenges for ligand discovery.
 
-**Literature:** ```json
-{
-  "support_level": "supporting",
-  "key_findings": "MTHFR polymorphisms, specifically C677T and A1298C, are associated with an increased risk of schizophrenia, particularly in Asian and African populations, as evidenced by meta-analyses. The MTHFR C677T polymorphism also appears to interact with environmental factors such as childhood adversity to heighten schizophrenia risk. Additionally, MTHFR variations have been linked to cognitive impairment and an increased risk of metabolic syndrome in individuals with schizophrenia."
-}
-```
+**Literature:** MTHFR polymorphisms, specifically C677T and A1298C, are associated with an increased risk of schizophrenia, particularly in Asian and African populations, as evidenced by meta-analyses. The MTHFR C677T polymorphism also appears to interact with environmental factors such as childhood adversity to heighten schizophrenia risk. Additionally, MTHFR variations have been linked to cognitive impairment and an increased risk of metabolic syndrome in individuals with schizophrenia.
 
 **PMIDs:** 40282401, 24938371, 29188628
 
