@@ -13,34 +13,30 @@ Example output: see [examples/alzheimers.md](examples/report-alzheimer-disease.m
 
 ```mermaid
 flowchart TD
-    Input(["Disease Name"])
-    Input --> Orch
+    Input(["Disease Name"]):::output --> Orch["Orchestrator"]:::orchestrator
 
-    Orch["Orchestrator"]:::orchestrator
+    %% Stage 1 — Gene Discovery
+    Orch -- "step 1 · find targets" --> GH["Gene Hunter"]:::agent
+    GH --> OT["Open Targets<br/>search_disease · get_targets"]:::api
 
-    subgraph Agents [" "]
-        direction TB
-        GH["Gene Hunter"]:::agent
-        DA["Druggability Assessor"]:::agent
-        LV["Literature Validator"]:::agent
-    end
+    %% Fan-out per gene
+    OT -- "GeneAssociation × N" --> Fork{{"parallel<br/>per gene"}}:::orchestrator
 
-    Orch -- "1 · find targets" --> GH
-    GH --> OT_S["Open Targets\nsearch_disease"]:::api
-    OT_S --> OT_T["Open Targets\nget_disease_targets"]:::api
-    OT_T -- "list[GeneAssociation]" --> Orch
+    Fork --> DA["Druggability<br/>Assessor"]:::agent
+    Fork --> LV["Literature<br/>Validator"]:::agent
 
-    Orch -- "2 · parallel per gene" --> DA & LV
+    %% Stage 2 — Parallel assessment
+    DA --> UP["UniProt<br/>fetch_protein_info"]:::api
+    DA --> CH["ChEMBL<br/>assess_compounds"]:::api
+    LV --> PM["PubMed<br/>search · fetch"]:::api
 
-    DA --> UP["UniProt\nfetch_protein_info"]:::api
-    DA --> CH["ChEMBL\nassess_compounds"]:::api
-    UP & CH -- "DruggabilityProfile" --> Orch
+    UP -- "DruggabilityProfile" --> Merge
+    CH --> Merge
+    PM -- "LiteratureEvidence" --> Merge
 
-    LV --> PM["PubMed\nsearch + fetch"]:::api
-    PM -- "LiteratureEvidence" --> Orch
-
-    Orch -- "3 · aggregate" --> LLM["LLM Synthesis"]:::llm
-    LLM --> Report(["Ranked Report\n+ Recommendation"]):::output
+    %% Stage 3 — Synthesis
+    Merge{{"aggregate"}}:::orchestrator -- "step 3 · synthesize" --> LLM["LLM<br/>Synthesis"]:::llm
+    LLM --> Report(["Ranked Report<br/>+ Recommendation"]):::output
 
     classDef agent fill:#2d9c6f,stroke:#1a7a50,color:#fff
     classDef orchestrator fill:#7b68ee,stroke:#5a4bcf,color:#fff
