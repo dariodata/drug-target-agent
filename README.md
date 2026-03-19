@@ -6,7 +6,7 @@ A multi-agent system that autonomously identifies and ranks drug targets for a g
 **Run the pipeline to generate a report:**
 ```uv run python -m src.orchestrator "Alzheimer disease"```
 
-Example output: see [examples/alzheimers.md](examples/report-alzheimer-disease.md) for a pre-generated report.
+Example output: see [reports/alzheimers.md](reports/report-alzheimer-disease.md) for a pre-generated report.
 
 
 ## Architecture
