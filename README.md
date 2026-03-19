@@ -13,18 +13,40 @@ Example output: see [examples/alzheimers.md](examples/report-alzheimer-disease.m
 
 ```mermaid
 flowchart TD
-    A["User Input: Disease Name"] --> B[Orchestrator]
-    B --> C[Gene Hunter]
-    C -->|"Open Targets GraphQL"| D[Top N Gene Targets]
-    D --> B
-    B --> E[Parallel per gene]
-    E --> F[Druggability Assessor]
-    E --> G[Literature Validator]
-    F -->|"UniProt + ChEMBL"| H[Druggability Profile]
-    G -->|"PubMed E-utilities"| I[Literature Evidence]
-    H --> B
-    I --> B
-    B --> J[Ranked Report + Recommendation]
+    Input(["Disease Name"])
+    Input --> Orch
+
+    Orch["Orchestrator"]:::orchestrator
+
+    subgraph Agents [" "]
+        direction TB
+        GH["Gene Hunter"]:::agent
+        DA["Druggability Assessor"]:::agent
+        LV["Literature Validator"]:::agent
+    end
+
+    Orch -- "1 · find targets" --> GH
+    GH --> OT_S["Open Targets\nsearch_disease"]:::api
+    OT_S --> OT_T["Open Targets\nget_disease_targets"]:::api
+    OT_T -- "list[GeneAssociation]" --> Orch
+
+    Orch -- "2 · parallel per gene" --> DA & LV
+
+    DA --> UP["UniProt\nfetch_protein_info"]:::api
+    DA --> CH["ChEMBL\nassess_compounds"]:::api
+    UP & CH -- "DruggabilityProfile" --> Orch
+
+    LV --> PM["PubMed\nsearch + fetch"]:::api
+    PM -- "LiteratureEvidence" --> Orch
+
+    Orch -- "3 · aggregate" --> LLM["LLM Synthesis"]:::llm
+    LLM --> Report(["Ranked Report\n+ Recommendation"]):::output
+
+    classDef agent fill:#2d9c6f,stroke:#1a7a50,color:#fff
+    classDef orchestrator fill:#7b68ee,stroke:#5a4bcf,color:#fff
+    classDef api fill:#4a90d9,stroke:#2e6db3,color:#fff
+    classDef llm fill:#d94a6e,stroke:#b33655,color:#fff
+    classDef output fill:#e8913a,stroke:#c47020,color:#fff
 ```
 
 ### Why Agents?
