@@ -58,10 +58,10 @@ This architecture is modular: adding a Clinical Trials agent or Pathway Analysis
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/drug-target-agent.git
+git clone https://github.com/dariodata/drug-target-agent.git
 cd drug-target-agent
 cp .env.example .env
-# Edit .env with your Google Gemini API key and a valid email for the NCBI API (no registration needed)
+# Edit .env with your Google Gemini API key (GOOGLE_API_KEY, free tier is enough) and a valid email for the NCBI API (no registration needed)
 uv sync
 uv run python -m src.orchestrator "Alzheimer disease"
 ```
