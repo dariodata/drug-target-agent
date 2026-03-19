@@ -1,7 +1,7 @@
 """Orchestrator: coordinates the multi-agent drug target reconnaissance pipeline."""
 
 import asyncio
-
+import os
 import sys
 
 import httpx
@@ -159,8 +159,9 @@ async def main():
     import json
     import re
     slug = re.sub(r"[^a-z0-9]+", "-", disease.lower()).strip("-")
-    json_path = f"report-{slug}.json"
-    md_path = f"report-{slug}.md"
+    os.makedirs("reports", exist_ok=True)
+    json_path = f"reports/report-{slug}.json"
+    md_path = f"reports/report-{slug}.md"
     with open(json_path, "w") as f:
         json.dump(report.model_dump(), f, indent=2)
     with open(md_path, "w") as f:

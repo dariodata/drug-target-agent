@@ -1,0 +1,224 @@
+{
+  "disease": "Schizophrenia",
+  "disease_id": "ENSG00000149295",
+  "targets": [
+    {
+      "gene_symbol": "DRD2",
+      "ensembl_id": "ENSG00000149295",
+      "target_name": "dopamine receptor D2",
+      "association_score": 0.7339240741273376,
+      "druggability": {
+        "gene_symbol": "DRD2",
+        "uniprot_accession": "P14416",
+        "protein_class": "Belongs to the G-protein coupled receptor 1 family",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Golgi apparatus membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 57,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL42",
+            "pref_name": "CLOZAPINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL540575",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL314952",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL110435",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL64487",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "DRD2 is a highly druggable target, being a well-characterized GPCR located at the cell membrane with numerous known ligands, including compounds in Phase 4 clinical development, and multiple available 3D structures supporting structure-based drug design."
+      },
+      "literature": {
+        "gene_symbol": "DRD2",
+        "disease": "Schizophrenia",
+        "num_recent_papers": 461,
+        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Large-scale genome-wide association studies (GWAS) have identified DRD2 as a significant locus associated with schizophrenia. Specific DRD2 polymorphisms are linked to increased risk for schizophrenia, including treatment-resistant forms, and are associated with altered brain function in intermediate phenotypes. Functional studies further highlight the role of DRD2 in neural circuits regulating social behavior, a core symptom of the disorder.\"\n}\n```",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "25056061",
+          "36980961",
+          "37777856"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "SHANK3",
+      "ensembl_id": "ENSG00000251322",
+      "target_name": "SH3 and multiple ankyrin repeat domains 3",
+      "association_score": 0.701815114829715,
+      "druggability": {
+        "gene_symbol": "SHANK3",
+        "uniprot_accession": "Q9BYB0",
+        "protein_class": "Unknown",
+        "subcellular_locations": [
+          "Cytoplasm",
+          "Postsynaptic density",
+          "Cell projection, dendritic spine"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 0,
+        "max_phase_drug": 0,
+        "top_compounds": [],
+        "druggability_verdict": "As a scaffold protein involved in protein-protein interactions, primarily localized intracellularly, and with no known ligands or compounds in clinical development, SHANK3 appears to be a challenging target for traditional small molecule drug discovery."
+      },
+      "literature": {
+        "gene_symbol": "SHANK3",
+        "disease": "Schizophrenia",
+        "num_recent_papers": 63,
+        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"SHANK3 is strongly implicated in schizophrenia through various mechanisms. Its promoter is hypermethylated in peripheral blood cells of first-episode schizophrenia patients, correlating with negative symptoms and cortical surface area, and dysregulated in cortical interneurons. Additionally, schizophrenia-linked SHANK3 mutations (e.g., R1117X) in mouse models lead to profound synaptic defects in the prefrontal cortex, altered dendritic spine dynamics, adolescent sleep disturbances, and dopaminergic hyperactivity, supporting its critical role in the neuropathology of the disorder.\"\n}\n```",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "37211699",
+          "37532012",
+          "37144901"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "RTN4R",
+      "ensembl_id": "ENSG00000040608",
+      "target_name": "reticulon 4 receptor",
+      "association_score": 0.6705397314651566,
+      "druggability": {
+        "gene_symbol": "RTN4R",
+        "uniprot_accession": "Q9BZR6",
+        "protein_class": "Belongs to the Nogo receptor family",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Membrane raft",
+          "Cell projection, dendrite",
+          "Cell projection, axon",
+          "Perikaryon"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 0,
+        "max_phase_drug": 0,
+        "top_compounds": [],
+        "druggability_verdict": "RTN4R, as a cell membrane receptor with existing 3D structures, possesses good targetability for drug discovery. However, the complete absence of known bioactive compounds or clinical programs indicates its druggability, particularly for small molecules, remains unproven."
+      },
+      "literature": {
+        "gene_symbol": "RTN4R",
+        "disease": "Schizophrenia",
+        "num_recent_papers": 14,
+        "key_findings_summary": "```json\n{\n  \"support_level\": \"inconclusive\",\n  \"key_findings\": \"While some studies found no significant association between common RTN4R polymorphisms and schizophrenia in specific populations (Chinese, Korean), others identified rare coding variants in RTN4R associated with the disease. These rare variants were shown to functionally impair LGI1-NgR1 signaling and affect growth cone formation in vitro, suggesting RTN4R may modulate schizophrenia risk or clinical expression in a subset of patients, particularly through rare, impactful variants.\"\n}\n```",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "18043741",
+          "27468420",
+          "28892071"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "DRD3",
+      "ensembl_id": "ENSG00000151577",
+      "target_name": "dopamine receptor D3",
+      "association_score": 0.6602146470218392,
+      "druggability": {
+        "gene_symbol": "DRD3",
+        "uniprot_accession": "P35462",
+        "protein_class": "Belongs to the G-protein coupled receptor 1 family",
+        "subcellular_locations": [
+          "Cell membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 99,
+        "max_phase_drug": 2,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL275707",
+            "pref_name": "RIMCAZOLE",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL7549",
+            "pref_name": "PRECLAMOL",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL314952",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL110349",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL62829",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "DRD3 is a highly druggable G-protein coupled receptor located on the cell membrane, a validated and favorable target class, with multiple existing 3D structures to facilitate drug design. The presence of numerous bioactive compounds, including some in Phase 2 clinical trials, further confirms its tractability and potential for drug development."
+      },
+      "literature": {
+        "gene_symbol": "DRD3",
+        "disease": "Schizophrenia",
+        "num_recent_papers": 187,
+        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"DRD3 polymorphisms, particularly Ser9Gly, are significantly associated with antipsychotic treatment response in schizophrenia, where the Ser allele and Ser/Ser genotype contribute to poor response in Caucasians. Evidence also links DRD3 polymorphisms to clozapine resistance in treatment-resistant schizophrenia. While some studies suggest a small, ethnically specific association with schizophrenia susceptibility (e.g., in Caucasians), others found no direct link.\"\n}\n```",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "36980961",
+          "35835396",
+          "9674978"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "MTHFR",
+      "ensembl_id": "ENSG00000177000",
+      "target_name": "methylenetetrahydrofolate reductase",
+      "association_score": 0.658188162317407,
+      "druggability": {
+        "gene_symbol": "MTHFR",
+        "uniprot_accession": "P42898",
+        "protein_class": "Belongs to the methylenetetrahydrofolate reductase family",
+        "subcellular_locations": [],
+        "has_3d_structure": true,
+        "num_known_compounds": 0,
+        "max_phase_drug": 0,
+        "top_compounds": [],
+        "druggability_verdict": "MTHFR is an enzyme with available 3D structures, which are positive indicators for druggability. However, the complete absence of known bioactive compounds or clinical candidates suggests this target is underexplored or poses significant challenges for ligand discovery."
+      },
+      "literature": {
+        "gene_symbol": "MTHFR",
+        "disease": "Schizophrenia",
+        "num_recent_papers": 153,
+        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"MTHFR polymorphisms, specifically C677T and A1298C, are associated with an increased risk of schizophrenia, particularly in Asian and African populations, as evidenced by meta-analyses. The MTHFR C677T polymorphism also appears to interact with environmental factors such as childhood adversity to heighten schizophrenia risk. Additionally, MTHFR variations have been linked to cognitive impairment and an increased risk of metabolic syndrome in individuals with schizophrenia.\"\n}\n```",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "40282401",
+          "24938371",
+          "29188628"
+        ]
+      },
+      "reasoning": ""
+    }
+  ],
+  "recommendation": "**DRD2** and **DRD3** are the most promising drug targets for schizophrenia, given their high druggability as GPCRs with existing clinical-stage compounds, robust genetic association (DRD2) and strong links to antipsychotic treatment response and resistance (DRD3). Conversely, **SHANK3** presents compelling mechanistic evidence through mutations leading to synaptic defects and dopaminergic hyperactivity; however, its intracellular scaffold nature poses significant druggability challenges requiring innovative modalities. **MTHFR** also offers a relevant genetic association, particularly in specific populations and for broader symptoms like cognitive impairment, but its druggability requires further exploration. Therefore, immediate efforts should prioritize lead optimization and compound development for DRD2/DRD3, while initiating exploratory studies into non-traditional therapeutic approaches for SHANK3 and comprehensively assessing MTHFR's tractability for intervention."
+}

@@ -1,15 +1,13 @@
 # Drug Target Reconnaissance Agent
 
-A multi-agent system that autonomously identifies and ranks drug targets for a given disease. Takes a disease name, queries public bioinformatics databases, and produces a ranked report with druggability assessments and literature evidence.
+A multi-agent system that autonomously identifies and ranks drug targets for a given disease. Takes a disease name, queries public bioinformatics databases, and produces a ranked report with druggability assessments and literature evidence. [See the full blog post.](blog-post.md)
 
-<details>
-<summary>Example output: Alzheimer disease (click to expand)</summary>
 
-*Run the pipeline to generate: `uv run python -m src.orchestrator "Alzheimer disease"`*
+**Run the pipeline to generate a report:**
+```uv run python -m src.orchestrator "Alzheimer disease"```
 
-See [examples/alzheimers.md](examples/alzheimers.md) for a pre-generated report.
+Example output: see [examples/alzheimers.md](examples/report-alzheimer-disease.md) for a pre-generated report.
 
-</details>
 
 ## Architecture
 
@@ -31,7 +29,13 @@ flowchart TD
 
 ### Why Agents?
 
-Each agent has **different tools and reasoning**: Gene Hunter queries genomics databases, Druggability Assessor interprets protein structure and compound data, and Literature Validator reads and classifies paper abstracts. The Orchestrator adaptively decides investigation depth and synthesizes conflicting evidence across sources. This architecture extends naturally — adding a Clinical Trials agent or Pathway Analysis agent requires no changes to existing agents.
+Each agent has **different tools and reasoning**: 
+- Gene Hunter queries genomics databases
+- Druggability Assessor interprets protein structure and compound data
+- Literature Validator reads and classifies paper abstracts
+- Orchestrator decides how to integrate the different evidence across sources
+
+This architecture is modular: adding a Clinical Trials agent or Pathway Analysis agent requires no changes to existing agents.
 
 ## Quick Start
 
@@ -39,7 +43,7 @@ Each agent has **different tools and reasoning**: Gene Hunter queries genomics d
 git clone https://github.com/YOUR_USERNAME/drug-target-agent.git
 cd drug-target-agent
 cp .env.example .env
-# Edit .env with your OpenAI API key and NCBI email
+# Edit .env with your Google Gemini API key and a valid email for the NCBI API (no registration needed)
 uv sync
 uv run python -m src.orchestrator "Alzheimer disease"
 ```
@@ -82,7 +86,7 @@ All tests use mocked API responses (no live API calls required).
 
 ## Limitations & Next Steps
 
-- **Single association source:** Only Open Targets for gene-disease links (could add GWAS Catalog, DisGeNET)
-- **Abstracts only:** PubMed search uses abstracts, not full text
-- **No clinical trial data:** Could add ClinicalTrials.gov agent
-- **Phase 2:** Store results in a Neo4j/Kuzu knowledge graph for cross-disease target comparison and shared pathway discovery
+- Single association source: Only Open Targets for gene-disease links (could add GWAS Catalog, DisGeNET)
+- Abstracts only: PubMed search uses abstracts, not full text
+- No clinical trial data: Could add ClinicalTrials.gov agent
+- Phase 2: Store results in a Neo4j/Kuzu knowledge graph for cross-disease target comparison and shared pathway discovery
