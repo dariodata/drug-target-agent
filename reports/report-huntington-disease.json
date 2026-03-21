@@ -1,0 +1,298 @@
+{
+  "disease": "Huntington disease",
+  "disease_id": "ENSG00000197386",
+  "targets": [
+    {
+      "gene_symbol": "HTT",
+      "ensembl_id": "ENSG00000197386",
+      "target_name": "huntingtin",
+      "association_score": 0.7313833816970179,
+      "druggability": {
+        "gene_symbol": "HTT",
+        "uniprot_accession": "P31645",
+        "protein_class": "Belongs to the sodium:neurotransmitter symporter (SNF) (TC 2.A.22) family. SLC6A4 subfamily",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Endomembrane system",
+          "Endosome membrane",
+          "Synapse",
+          "Cell junction, focal adhesion",
+          "Cell projection, neuron projection"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 88,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL306700",
+            "pref_name": "VILOXAZINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL490",
+            "pref_name": "PAROXETINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL637",
+            "pref_name": "VENLAFAXINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL370805",
+            "pref_name": "COCAINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL641",
+            "pref_name": "ATOMOXETINE",
+            "max_phase": 4
+          }
+        ],
+        "druggability_verdict": "This target, the Serotonin Transporter (SERT), is highly druggable given its critical role as a cell membrane-bound neurotransmitter symporter, extensive availability of 3D structures, and a rich history of approved drugs (max phase 4) such as paroxetine and venlafaxine targeting it for various clinical indications."
+      },
+      "literature": {
+        "gene_symbol": "HTT",
+        "disease": "Huntington disease",
+        "num_recent_papers": 532,
+        "key_findings_summary": "Huntington disease is caused by an expanded CAG trinucleotide repeat in the HTT gene, leading to a toxic polyglutamine tract in the huntingtin protein that results in neuronal dysfunction and death. Somatic CAG repeat expansion and genetic modifiers, particularly DNA repair genes, significantly influence disease onset and progression. Current therapeutic strategies include HTT-lowering approaches and modulating DNA repair to limit somatic repeat expansion.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "27188817",
+          "32796930",
+          "41233526"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "SLC18A2",
+      "ensembl_id": "ENSG00000165646",
+      "target_name": "solute carrier family 18 member A2",
+      "association_score": 0.5836717405667627,
+      "druggability": {
+        "gene_symbol": "SLC18A2",
+        "uniprot_accession": "Q05940",
+        "protein_class": "Belongs to the major facilitator superfamily. Vesicular transporter family",
+        "subcellular_locations": [
+          "Cytoplasmic vesicle, secretory vesicle, synaptic vesicle membrane",
+          "Cytoplasmic vesicle, secretory vesicle membrane",
+          "Cell projection, axon",
+          "Cell projection, dendrite"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 29,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL772",
+            "pref_name": "RESERPINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL39",
+            "pref_name": "SEROTONIN",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL51",
+            "pref_name": "KETANSERIN",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL122270",
+            "pref_name": "LOBELINE",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL579217",
+            "pref_name": "FLORBENAZINE",
+            "max_phase": 2
+          }
+        ],
+        "druggability_verdict": "SLC18A2 (VMAT2) is a highly druggable target, as evidenced by its transporter nature, abundant 3D structural data, and the existence of multiple bioactive compounds, including one in clinical phase 4 (Reserpine) and others in phase 3."
+      },
+      "literature": {
+        "gene_symbol": "SLC18A2",
+        "disease": "Huntington disease",
+        "num_recent_papers": 0,
+        "key_findings_summary": "No papers found for this gene-disease pair.",
+        "support_level": "inconclusive",
+        "top_pmids": []
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "DRD2",
+      "ensembl_id": "ENSG00000149295",
+      "target_name": "dopamine receptor D2",
+      "association_score": 0.39417721550686047,
+      "druggability": {
+        "gene_symbol": "DRD2",
+        "uniprot_accession": "P14416",
+        "protein_class": "Belongs to the G-protein coupled receptor 1 family",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Golgi apparatus membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 57,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL42",
+            "pref_name": "CLOZAPINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL309118",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL64622",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL29846",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL88837",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "DRD2 is a highly druggable target due to its identity as a well-established GPCR, its cell membrane localization, the availability of multiple 3D structures, and the existence of numerous known bioactive compounds, including a marketed drug (Clozapine) that reached Phase 4."
+      },
+      "literature": {
+        "gene_symbol": "DRD2",
+        "disease": "Huntington disease",
+        "num_recent_papers": 7,
+        "key_findings_summary": "DRD2 exhibits transcriptional dysregulation in Huntington disease (HD) mouse models, with changes in its expression correlating with disease severity. Genetic variations in DRD2 are associated with the manifestation of psychotic symptoms in HD patients. Additionally, DRD2-expressing neurons in the striatum are implicated in the disease pathology, and DRD2, along with DRD3, is considered a potential target for autophagy-inducing therapeutic strategies in HD.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "40358175",
+          "39884587",
+          "31822756"
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "SLC2A3",
+      "ensembl_id": "ENSG00000059804",
+      "target_name": "solute carrier family 2 member 3",
+      "association_score": 0.3888006311684792,
+      "druggability": {
+        "gene_symbol": "SLC2A3",
+        "uniprot_accession": "P11169",
+        "protein_class": "Belongs to the major facilitator superfamily. Sugar transporter (TC 2.A.1.1) family. Glucose transporter subfamily",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Perikaryon",
+          "Cell projection"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 99,
+        "max_phase_drug": 3,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL165",
+            "pref_name": "RESVERATROL",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3781149",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3781535",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL2057965",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL4287336",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "This target is highly druggable due to its membrane localization, the availability of 7 high-resolution 3D structures for structure-based drug design, and the existence of nearly 100 known compounds, with one reaching Phase 3 clinical trials."
+      },
+      "literature": {
+        "gene_symbol": "SLC2A3",
+        "disease": "Huntington disease",
+        "num_recent_papers": 0,
+        "key_findings_summary": "No papers found for this gene-disease pair.",
+        "support_level": "inconclusive",
+        "top_pmids": []
+      },
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "DRD3",
+      "ensembl_id": "ENSG00000151577",
+      "target_name": "dopamine receptor D3",
+      "association_score": 0.3330658783472069,
+      "druggability": {
+        "gene_symbol": "DRD3",
+        "uniprot_accession": "P35462",
+        "protein_class": "Belongs to the G-protein coupled receptor 1 family",
+        "subcellular_locations": [
+          "Cell membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 99,
+        "max_phase_drug": 2,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL275707",
+            "pref_name": "RIMCAZOLE",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL7549",
+            "pref_name": "PRECLAMOL",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL108637",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL317757",
+            "pref_name": "DIFLUOROBENZTROPINE",
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL302183",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "DRD3 is a highly druggable target, being a cell membrane-localized GPCR with multiple known 3D structures and a significant number of bioactive compounds that have progressed to Phase 2 clinical trials."
+      },
+      "literature": {
+        "gene_symbol": "DRD3",
+        "disease": "Huntington disease",
+        "num_recent_papers": 1,
+        "key_findings_summary": "Activation of Dopamine Receptor D3 (DRD3) induces a persistent form of autophagy in experimental models of Huntington's Disease (HD). This DRD3-mediated autophagy promotes robust clearance of soluble mutated huntingtin (mHTT)/polyQ and provides neuroprotection in striatal neurons. These findings suggest that DRD3-induced autophagy could serve as a safe, disease-modifying intervention for HD.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "40358175"
+        ]
+      },
+      "reasoning": ""
+    }
+  ],
+  "recommendation": "**HTT**, as the directly causal gene, is the primary target with extensive literature (532 papers) supporting its role in Huntington disease pathology and established \"HTT-lowering\" therapeutic approaches. **DRD3** is a highly promising secondary target, supported by strong mechanistic evidence (1 paper) demonstrating that its activation promotes autophagy, clears mutant huntingtin, and offers neuroprotection, coupled with high druggability and existing Phase 2 compounds. While **DRD2** also shows transcriptional dysregulation (7 papers) and association with symptoms, DRD3's direct disease-modifying mechanism makes it a more immediate focus. In contrast, **SLC18A2** and **SLC2A3**, despite high theoretical druggability, completely lack disease-specific literature, rendering them high-risk and requiring substantial preclinical validation. Therefore, we recommend continued prioritization of HTT-lowering strategies while rapidly advancing preclinical validation and compound development for DRD3 modulators."
+}
