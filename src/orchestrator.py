@@ -11,7 +11,8 @@ from dotenv import load_dotenv
 from src.agents.druggability import run_druggability_assessor
 from src.agents.gene_hunter import run_gene_hunter
 from src.agents.literature import run_literature_validator
-from src.models import ReconReport, TargetReport
+from src.models import Pathway, ReconReport, TargetReport
+from src.tools.reactome import fetch_pathways
 
 load_dotenv()
 
@@ -56,17 +57,19 @@ async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
             if delay:
                 await asyncio.sleep(delay)
             print(f"[Assessing] {gene.gene_symbol}...")
-            druggability, literature = await asyncio.gather(
+            druggability, literature, raw_pathways = await asyncio.gather(
                 run_druggability_assessor(client, gene.gene_symbol),
                 run_literature_validator(client, gene.gene_symbol, disease_name),
+                fetch_pathways(client, gene.gene_symbol),
             )
-            return gene, druggability, literature
+            pathways = [Pathway(**p) for p in raw_pathways]
+            return gene, druggability, literature, pathways
 
         results = await asyncio.gather(
             *(assess_gene(gene, delay=i * 1.5) for i, gene in enumerate(genes))
         )
 
-        for gene, druggability, literature in results:
+        for gene, druggability, literature, pathways in results:
             target_reports.append(TargetReport(
                 gene_symbol=gene.gene_symbol,
                 ensembl_id=gene.ensembl_id,
@@ -74,6 +77,7 @@ async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
                 association_score=gene.association_score,
                 druggability=druggability,
                 literature=literature,
+                pathways=pathways,
                 reasoning="",
             ))
 

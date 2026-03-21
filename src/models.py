@@ -35,6 +35,12 @@ class LiteratureEvidence(BaseModel):
     top_pmids: list[str] = Field(default_factory=list)
 
 
+class Pathway(BaseModel):
+    """A biological pathway from Reactome."""
+    reactome_id: str
+    name: str
+
+
 class TargetReport(BaseModel):
     """Combined assessment of a single drug target candidate."""
     gene_symbol: str
@@ -43,6 +49,7 @@ class TargetReport(BaseModel):
     association_score: float
     druggability: DruggabilityProfile
     literature: LiteratureEvidence
+    pathways: list[Pathway] = Field(default_factory=list)
     reasoning: str
 
 

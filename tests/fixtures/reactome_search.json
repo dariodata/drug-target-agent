@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "typeName": "Pathway",
+      "entries": [
+        {
+          "stId": "R-HSA-6794362",
+          "name": "Protein-protein interactions at synapses",
+          "species": "Homo sapiens"
+        },
+        {
+          "stId": "R-HSA-112316",
+          "name": "Neuronal System",
+          "species": "Homo sapiens"
+        },
+        {
+          "stId": "R-HSA-500792",
+          "name": "GPCR ligand binding",
+          "species": "Homo sapiens"
+        }
+      ]
+    }
+  ]
+}
