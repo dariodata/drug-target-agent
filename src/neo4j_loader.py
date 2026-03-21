@@ -117,7 +117,7 @@ async def load_report(driver, report: ReconReport) -> dict:
 
                 # Compound nodes + Protein -[HAS_COMPOUND]-> Compound
                 for comp in drug.top_compounds:
-                    chembl_id = comp.get("chembl_id", "")
+                    chembl_id = comp.get("chembl_id") or comp.get("molecule_chembl_id", "")
                     if not chembl_id:
                         continue
                     await session.run(
