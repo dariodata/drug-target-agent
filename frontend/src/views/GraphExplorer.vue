@@ -3,7 +3,7 @@
     <!-- Floating toolbar overlay -->
     <div class="toolbar-float">
       <div class="filter-group">
-        <label v-for="t in nodeTypes" :key="t.key" class="filter-chip" :class="{ off: !t.visible }">
+        <label v-for="t in nodeTypes" :key="t.key" class="filter-chip" :class="{ off: !t.visible }" :style="{ '--chip-color': t.color }">
           <input type="checkbox" v-model="t.visible" />
           <span class="chip-dot" :style="{ background: t.color }"></span>
           <span class="chip-label">{{ t.label }}</span>
@@ -55,9 +55,13 @@
       </div>
     </div>
 
-    <!-- Node count indicator -->
+    <!-- Status bar -->
     <div class="graph-info">
-      {{ filteredGraph.nodes.length }} nodes &middot; {{ filteredGraph.edges.length }} edges
+      <span class="info-label">{{ layoutLabel }}</span>
+      <span class="info-sep">&middot;</span>
+      <span>{{ filteredGraph.nodes.length }} nodes</span>
+      <span class="info-sep">&middot;</span>
+      <span>{{ filteredGraph.edges.length }} edges</span>
     </div>
   </div>
 </template>
@@ -88,6 +92,9 @@ const nodeTypes = reactive([
   { key: 'paper', label: 'Paper', color: 'var(--paper)', visible: true },
   { key: 'pathway', label: 'Pathway', color: 'var(--pathway)', visible: true },
 ])
+
+const layoutLabels = { fcose: 'Force-directed', circle: 'Circle', grid: 'Grid', breadthfirst: 'Hierarchy', cose: 'CoSE' }
+const layoutLabel = computed(() => layoutLabels[layoutName.value] || layoutName.value)
 
 const visibleTypes = computed(() => new Set(nodeTypes.filter(t => t.visible).map(t => t.key)))
 
@@ -208,9 +215,12 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(106,161,224,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse at 75% 20%, rgba(212,166,90,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at center, transparent 40%, rgba(17,19,24,0.5) 100%),
+    radial-gradient(ellipse at 20% 50%, rgba(106,161,224,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 20%, rgba(212,166,90,0.05) 0%, transparent 50%),
+    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px),
     var(--bg);
+  background-size: 100%, 100%, 100%, 24px 24px, 100%;
 }
 
 /* ── Floating toolbar ── */
@@ -230,59 +240,70 @@ onUnmounted(() => {
 
 .filter-group {
   display: flex;
-  gap: 4px;
+  gap: 3px;
   flex-wrap: wrap;
-  background: rgba(16,18,26,0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(16,18,26,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 4px;
+  padding: 5px;
 }
 
 .filter-chip {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
   cursor: pointer;
-  transition: opacity 0.15s, background 0.15s;
+  transition: opacity 0.2s, background 0.2s, box-shadow 0.2s;
   user-select: none;
 }
-.filter-chip:hover { background: var(--bg-hover); }
-.filter-chip.off { opacity: 0.35; }
+.filter-chip:not(.off) {
+  background: color-mix(in srgb, var(--chip-color) 10%, transparent);
+}
+.filter-chip:hover {
+  background: color-mix(in srgb, var(--chip-color) 18%, transparent);
+}
+.filter-chip.off { opacity: 0.3; }
 .filter-chip input { display: none; }
 
 .chip-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
+  box-shadow: 0 0 6px currentColor;
 }
+.filter-chip.off .chip-dot { box-shadow: none; }
+
 .chip-label { color: var(--text); font-weight: 500; }
 .chip-count {
   color: var(--text-dim);
   font-family: var(--font-mono);
   font-size: 10px;
+  min-width: 14px;
+  text-align: right;
 }
 
 .toolbar-controls {
   display: flex;
   gap: 6px;
-  background: rgba(16,18,26,0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(16,18,26,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 4px;
+  padding: 5px;
 }
 .toolbar-controls .layout-select {
-  font-size: 11px;
-  padding: 4px 8px;
+  font-size: 12px;
+  padding: 5px 10px;
   background: transparent;
   border: none;
+  color: var(--text);
 }
 
 /* ── Split container ── */
@@ -308,18 +329,31 @@ onUnmounted(() => {
   transition: flex-basis 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Bottom info ── */
+/* ── Status bar ── */
 .graph-info {
   position: absolute;
   bottom: 12px;
   left: 12px;
   z-index: 20;
-  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
   font-family: var(--font-mono);
-  color: var(--text-faint);
-  background: rgba(16,18,26,0.7);
-  padding: 3px 8px;
-  border-radius: 4px;
+  color: var(--text-dim);
+  background: rgba(16,18,26,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: var(--radius);
   pointer-events: none;
+}
+.info-label {
+  color: var(--accent-warm);
+  font-weight: 600;
+}
+.info-sep {
+  color: var(--text-faint);
 }
 </style>
