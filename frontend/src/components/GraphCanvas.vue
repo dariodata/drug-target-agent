@@ -30,6 +30,17 @@ const typeShapes = {
   compound: 'hexagon', paper: 'rectangle', pathway: 'triangle',
 }
 
+const typeSizes = {
+  disease: 42, pathway: 38, gene: 30,
+  protein: 30, compound: 28, paper: 24,
+}
+
+function nodeSize(ele) {
+  const base = typeSizes[ele.data('type')] || 30
+  const deg = ele.degree ? ele.degree() : 0
+  return Math.min(base + deg * 2.5, 72)
+}
+
 function buildCy() {
   if (!container.value) return
   if (cy) cy.destroy()
@@ -51,16 +62,17 @@ function buildCy() {
           color: '#bbb',
           'text-valign': 'bottom',
           'text-margin-y': 7,
+          'text-opacity': 1,
           'background-color': (ele) => typeColors[ele.data('type')] || '#888',
           shape: (ele) => typeShapes[ele.data('type')] || 'ellipse',
-          width: 34,
-          height: 34,
+          width: (ele) => nodeSize(ele),
+          height: (ele) => nodeSize(ele),
           'border-width': 2,
           'border-color': (ele) => typeColors[ele.data('type')] || '#888',
           'border-opacity': 0.3,
-          'text-max-width': 90,
+          'text-max-width': 100,
           'text-wrap': 'ellipsis',
-          'transition-property': 'width height border-width border-opacity opacity overlay-opacity',
+          'transition-property': 'border-width border-opacity opacity overlay-opacity',
           'transition-duration': 200,
         },
       },
@@ -70,18 +82,26 @@ function buildCy() {
           'border-width': 3,
           'border-color': '#fff',
           'border-opacity': 1,
-          width: 44,
-          height: 44,
+          width: (ele) => nodeSize(ele) + 10,
+          height: (ele) => nodeSize(ele) + 10,
           'overlay-padding': 8,
           'overlay-opacity': 0.12,
           'overlay-color': (ele) => typeColors[ele.data('type')] || '#fff',
           'font-size': 13,
           color: '#fff',
+          'text-opacity': 1,
         },
       },
       {
         selector: 'node.highlighted',
-        style: { 'border-width': 3, 'border-color': '#fff', 'border-opacity': 1, width: 38, height: 38 },
+        style: {
+          'border-width': 3,
+          'border-color': '#fff',
+          'border-opacity': 1,
+          width: (ele) => nodeSize(ele) + 6,
+          height: (ele) => nodeSize(ele) + 6,
+          'text-opacity': 1,
+        },
       },
       {
         selector: '.dimmed',
@@ -113,13 +133,39 @@ function buildCy() {
         },
       },
     ],
-    layout: { name: props.layout, animate: false, nodeRepulsion: 8000, idealEdgeLength: 80 },
+    layout: {
+      name: props.layout,
+      animate: false,
+      padding: 60,
+      nodeRepulsion: 45000,
+      idealEdgeLength: 180,
+      nodeSeparation: 75,
+      numIter: 2500,
+      gravity: 0.25,
+      gravityRange: 3.8,
+    },
     minZoom: 0.2,
     maxZoom: 5,
   })
 
   cy.on('tap', 'node', (evt) => {
     emit('node-click', evt.target.data())
+  })
+
+  // Zoom-based label visibility: hide labels when zoomed out to reduce clutter
+  let zoomFrame = null
+  cy.on('zoom', () => {
+    if (zoomFrame) cancelAnimationFrame(zoomFrame)
+    zoomFrame = requestAnimationFrame(() => {
+      const zoom = cy.zoom()
+      cy.batch(() => {
+        cy.nodes().forEach((n) => {
+          if (n.hasClass('selected') || n.hasClass('highlighted')) return
+          const show = zoom >= 0.9 || (zoom >= 0.5 && n.degree() > 3)
+          n.style('text-opacity', show ? 1 : 0)
+        })
+      })
+    })
   })
 
   applyHighlights()
@@ -137,7 +183,18 @@ function applyHighlights() {
 
 function runLayout() {
   if (!cy) return
-  cy.layout({ name: props.layout, animate: true, animationDuration: 500, nodeRepulsion: 8000, idealEdgeLength: 80 }).run()
+  cy.layout({
+    name: props.layout,
+    animate: true,
+    animationDuration: 500,
+    padding: 60,
+    nodeRepulsion: 45000,
+    idealEdgeLength: 180,
+    nodeSeparation: 75,
+    numIter: 2500,
+    gravity: 0.25,
+    gravityRange: 3.8,
+  }).run()
 }
 
 function centerNode(id) {
