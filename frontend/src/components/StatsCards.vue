@@ -1,6 +1,6 @@
 <template>
   <div class="card-grid">
-    <div v-for="item in items" :key="item.key" class="card stat-card">
+    <div v-for="(item, i) in items" :key="item.key" class="card stat-card" :style="{ borderTop: '2px solid ' + item.color, '--i': i }">
       <div class="value" :style="{ color: item.color }">{{ stats[item.key] ?? 0 }}</div>
       <div class="label">{{ item.label }}</div>
     </div>
@@ -11,11 +11,18 @@
 defineProps({ stats: { type: Object, default: () => ({}) } })
 
 const items = [
-  { key: 'diseases', label: 'Diseases', color: '#e74c3c' },
-  { key: 'genes', label: 'Genes', color: '#3498db' },
-  { key: 'proteins', label: 'Proteins', color: '#2ecc71' },
-  { key: 'compounds', label: 'Compounds', color: '#f39c12' },
-  { key: 'papers', label: 'Papers', color: '#9b59b6' },
-  { key: 'pathways', label: 'Pathways', color: '#1abc9c' },
+  { key: 'diseases', label: 'Diseases', color: 'var(--disease)' },
+  { key: 'genes', label: 'Genes', color: 'var(--gene)' },
+  { key: 'proteins', label: 'Proteins', color: 'var(--protein)' },
+  { key: 'compounds', label: 'Compounds', color: 'var(--compound)' },
+  { key: 'papers', label: 'Papers', color: 'var(--paper)' },
+  { key: 'pathways', label: 'Pathways', color: 'var(--pathway)' },
 ]
 </script>
+
+<style scoped>
+.stat-card {
+  animation: fadeInUp 0.35s ease both;
+  animation-delay: calc(var(--i) * 0.06s);
+}
+</style>

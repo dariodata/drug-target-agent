@@ -208,8 +208,8 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(91,156,245,0.03) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(0,212,170,0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 50%, rgba(106,161,224,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 20%, rgba(212,166,90,0.03) 0%, transparent 50%),
     var(--bg);
 }
 

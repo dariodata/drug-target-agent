@@ -29,7 +29,7 @@
       </div>
 
       <!-- Content -->
-      <div class="panel-content">
+      <div class="panel-content tab-fade" :key="activeTab">
         <!-- INFO TAB (all types) -->
         <template v-if="activeTab === 'info'">
           <!-- Gene Info -->
