@@ -298,6 +298,7 @@ onUnmounted(() => {
   min-height: 0;
   min-width: 0;
   z-index: 1;
+  flex-shrink: 0;
   transition: flex-basis 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
