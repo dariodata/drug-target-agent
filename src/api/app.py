@@ -1,5 +1,6 @@
 """FastAPI application for the drug target explorer."""
 
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -23,9 +24,12 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_cors_origins = os.environ.get("CORS_ORIGINS", "*")
+_origins = [o.strip() for o in _cors_origins.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_origins,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
