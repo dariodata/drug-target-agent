@@ -12,11 +12,11 @@
       </div>
       <div class="toolbar-controls">
         <select v-model="layoutName" class="layout-select">
+          <option value="d3-force">Physics</option>
           <option value="fcose">Force-directed</option>
           <option value="circle">Circle</option>
           <option value="grid">Grid</option>
           <option value="breadthfirst">Hierarchy</option>
-          <option value="cose">CoSE (legacy)</option>
         </select>
       </div>
     </div>
@@ -76,7 +76,7 @@ import DetailPanel from '../components/DetailPanel.vue'
 const route = useRoute()
 const loading = ref(true)
 const graphData = ref({ nodes: [], edges: [] })
-const layoutName = ref('fcose')
+const layoutName = ref('d3-force')
 
 // Panel state
 const panelOpen = ref(false)
@@ -93,7 +93,7 @@ const nodeTypes = reactive([
   { key: 'pathway', label: 'Pathway', color: 'var(--pathway)', visible: true },
 ])
 
-const layoutLabels = { fcose: 'Force-directed', circle: 'Circle', grid: 'Grid', breadthfirst: 'Hierarchy', cose: 'CoSE' }
+const layoutLabels = { 'd3-force': 'Physics', fcose: 'Force-directed', circle: 'Circle', grid: 'Grid', breadthfirst: 'Hierarchy' }
 const layoutLabel = computed(() => layoutLabels[layoutName.value] || layoutName.value)
 
 const visibleTypes = computed(() => new Set(nodeTypes.filter(t => t.visible).map(t => t.key)))

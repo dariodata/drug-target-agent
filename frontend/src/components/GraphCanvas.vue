@@ -6,6 +6,10 @@
 import { ref, onMounted, onUnmounted, watch, toRaw } from 'vue'
 import cytoscape from 'cytoscape'
 import fcose from 'cytoscape-fcose'
+import {
+  forceSimulation, forceLink, forceManyBody,
+  forceCollide, forceX, forceY,
+} from 'd3-force'
 
 cytoscape.use(fcose)
 
@@ -19,6 +23,10 @@ const emit = defineEmits(['node-click'])
 const container = ref(null)
 let cy = null
 let observer = null
+let activeLayout = null   // for static layouts (fcose, circle, etc.)
+let sim = null            // d3-force simulation
+let simNodeMap = null     // Map<id, d3 node> for drag sync
+let draggedNodeId = null  // currently dragged node id
 
 const typeColors = {
   disease: '#e74c3c', gene: '#3498db', protein: '#2ecc71',
@@ -41,8 +49,57 @@ function nodeSize(ele) {
   return Math.min(base + deg * 2.5, 72)
 }
 
+function stopAll() {
+  if (sim) { sim.stop(); sim = null; simNodeMap = null; draggedNodeId = null }
+  if (activeLayout) { activeLayout.stop(); activeLayout = null }
+}
+
+function startD3Force() {
+  stopAll()
+
+  // Build d3 nodes with random initial positions
+  const d3Nodes = cy.nodes().map((n) => ({
+    id: n.id(),
+    x: Math.random() * 800 - 400,
+    y: Math.random() * 600 - 300,
+  }))
+  simNodeMap = new Map(d3Nodes.map((n) => [n.id, n]))
+
+  const d3Links = cy.edges().map((e) => ({
+    source: e.source().id(),
+    target: e.target().id(),
+  }))
+
+  let hasFitted = false
+
+  sim = forceSimulation(d3Nodes)
+    .force('charge', forceManyBody().strength(-350).distanceMax(600))
+    .force('link', forceLink(d3Links).id((d) => d.id).distance(180).strength(0.3))
+    .force('collide', forceCollide(45).strength(0.7).iterations(2))
+    .force('x', forceX().strength(0.05))
+    .force('y', forceY().strength(0.05))
+    .alpha(1)
+    .alphaDecay(0.022)
+    .velocityDecay(0.4)
+    .on('tick', () => {
+      cy.batch(() => {
+        d3Nodes.forEach((d) => {
+          if (d.id !== draggedNodeId) {
+            cy.getElementById(d.id).position({ x: d.x, y: d.y })
+          }
+        })
+      })
+      // Fit viewport once the graph has mostly settled
+      if (!hasFitted && sim.alpha() < 0.15) {
+        cy.fit(null, 60)
+        hasFitted = true
+      }
+    })
+}
+
 function buildCy() {
   if (!container.value) return
+  if (activeLayout) { activeLayout.stop(); activeLayout = null }
   if (cy) cy.destroy()
 
   const elements = [
@@ -53,6 +110,7 @@ function buildCy() {
   cy = cytoscape({
     container: container.value,
     elements,
+    layout: { name: 'preset' },
     style: [
       {
         selector: 'node',
@@ -133,23 +191,36 @@ function buildCy() {
         },
       },
     ],
-    layout: {
-      name: props.layout,
-      animate: false,
-      padding: 60,
-      nodeRepulsion: 45000,
-      idealEdgeLength: 180,
-      nodeSeparation: 75,
-      numIter: 2500,
-      gravity: 0.25,
-      gravityRange: 3.8,
-    },
     minZoom: 0.2,
     maxZoom: 5,
   })
 
   cy.on('tap', 'node', (evt) => {
     emit('node-click', evt.target.data())
+  })
+
+  // Drag handlers for d3-force: reheat on grab, sync position, pin on release
+  cy.on('grab', 'node', (evt) => {
+    if (!sim) return
+    draggedNodeId = evt.target.id()
+    const d = simNodeMap.get(draggedNodeId)
+    if (d) { d.fx = d.x; d.fy = d.y }
+    sim.alphaTarget(0.3).restart()
+  })
+  cy.on('drag', 'node', (evt) => {
+    if (!sim || !draggedNodeId) return
+    const d = simNodeMap.get(draggedNodeId)
+    if (!d) return
+    const pos = evt.target.position()
+    d.fx = pos.x
+    d.fy = pos.y
+  })
+  cy.on('free', 'node', (evt) => {
+    if (!sim) return
+    const d = simNodeMap.get(evt.target.id())
+    if (d) { d.fx = d.x; d.fy = d.y } // pin where dropped
+    draggedNodeId = null
+    sim.alphaTarget(0)
   })
 
   // Zoom-based label visibility: hide labels when zoomed out to reduce clutter
@@ -169,6 +240,7 @@ function buildCy() {
   })
 
   applyHighlights()
+  runLayout()
 }
 
 function applyHighlights() {
@@ -183,18 +255,24 @@ function applyHighlights() {
 
 function runLayout() {
   if (!cy) return
-  cy.layout({
-    name: props.layout,
-    animate: true,
-    animationDuration: 500,
-    padding: 60,
-    nodeRepulsion: 45000,
-    idealEdgeLength: 180,
-    nodeSeparation: 75,
-    numIter: 2500,
-    gravity: 0.25,
-    gravityRange: 3.8,
-  }).run()
+  stopAll()
+  if (props.layout === 'd3-force') {
+    startD3Force()
+  } else {
+    activeLayout = cy.layout({
+      name: props.layout,
+      animate: true,
+      animationDuration: 500,
+      padding: 60,
+      nodeRepulsion: 45000,
+      idealEdgeLength: 180,
+      nodeSeparation: 75,
+      numIter: 2500,
+      gravity: 0.25,
+      gravityRange: 3.8,
+    })
+    activeLayout.run()
+  }
 }
 
 function centerNode(id) {
@@ -238,6 +316,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  stopAll()
   if (observer) observer.disconnect()
   if (cy) cy.destroy()
 })

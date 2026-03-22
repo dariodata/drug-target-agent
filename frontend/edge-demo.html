@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cytoscape Edge Styles</title>
+<script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111318; color: #ccc; font-family: system-ui; padding: 20px; }
+  h1 { font-size: 18px; margin-bottom: 16px; color: #fff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel { background: #1a1d24; border: 1px solid #2a2d36; border-radius: 8px; overflow: hidden; }
+  .panel-title { padding: 10px 14px; font-size: 13px; font-weight: 600; color: #6ea1e0;
+    border-bottom: 1px solid #2a2d36; display: flex; justify-content: space-between; }
+  .panel-title span { color: #777; font-weight: 400; }
+  .cy { width: 100%; height: 320px; }
+</style>
+</head>
+<body>
+<h1>Edge Curve Styles Comparison</h1>
+<div class="grid" id="grid"></div>
+<script>
+const styles = [
+  { name: 'bezier', desc: 'Current — curves parallel edges, arrows supported',
+    style: { 'curve-style': 'bezier' } },
+  { name: 'straight', desc: 'Straight lines — parallel edges overlap',
+    style: { 'curve-style': 'straight' } },
+  { name: 'haystack', desc: 'Distributed endpoints — no arrows, least overlap',
+    style: { 'curve-style': 'haystack', 'haystack-radius': 0.6 } },
+  { name: 'taxi', desc: 'Right-angle routes — no diagonal crossings',
+    style: { 'curve-style': 'taxi', 'taxi-direction': 'downward', 'taxi-turn-min-distance': 20 } },
+];
+
+// Build a small graph with hub + parallel edges to show overlap behavior
+const elements = [
+  { data: { id: 'hub', label: 'Disease' } },
+  ...['A','B','C','D','E'].map(id => ({ data: { id, label: 'Gene ' + id } })),
+  { data: { id: 'P1', label: 'Protein 1' } },
+  { data: { id: 'P2', label: 'Protein 2' } },
+  // Hub edges (converging)
+  ...['A','B','C','D','E'].map(id => ({ data: { source: 'hub', target: id } })),
+  // Parallel edges between same nodes
+  { data: { source: 'A', target: 'P1', label: 'encodes' } },
+  { data: { source: 'A', target: 'P1', label: 'regulates' } },
+  { data: { source: 'B', target: 'P2', label: 'encodes' } },
+  { data: { source: 'B', target: 'P2', label: 'binds' } },
+  // Cross edges
+  { data: { source: 'C', target: 'P1' } },
+  { data: { source: 'D', target: 'P2' } },
+  { data: { source: 'P1', target: 'P2' } },
+];
+
+const grid = document.getElementById('grid');
+
+styles.forEach(s => {
+  const panel = document.createElement('div');
+  panel.className = 'panel';
+  panel.innerHTML = `<div class="panel-title">${s.name}<span>${s.desc}</span></div><div class="cy" id="cy-${s.name}"></div>`;
+  grid.appendChild(panel);
+
+  const arrowShape = s.name === 'haystack' ? 'none' : 'triangle';
+
+  setTimeout(() => {
+    cytoscape({
+      container: document.getElementById('cy-' + s.name),
+      elements: JSON.parse(JSON.stringify(elements)),
+      style: [
+        { selector: 'node', style: {
+          label: 'data(label)', 'font-size': 10, color: '#bbb',
+          'text-valign': 'bottom', 'text-margin-y': 6,
+          'background-color': ele => ele.data('id') === 'hub' ? '#e74c3c'
+            : ele.data('id').startsWith('P') ? '#2ecc71' : '#3498db',
+          width: ele => ele.data('id') === 'hub' ? 40 : 28,
+          height: ele => ele.data('id') === 'hub' ? 40 : 28,
+          shape: ele => ele.data('id') === 'hub' ? 'diamond' : 'ellipse',
+        }},
+        { selector: 'edge', style: {
+          width: 1.5, 'line-color': '#4a5068', 'line-opacity': 0.7,
+          'target-arrow-color': '#4a5068', 'target-arrow-shape': arrowShape,
+          label: 'data(label)', 'font-size': 7, color: '#555',
+          'text-rotation': 'autorotate', 'text-margin-y': -8,
+          ...s.style,
+        }},
+      ],
+      layout: { name: 'cose', animate: false, nodeRepulsion: () => 12000, idealEdgeLength: () => 100 },
+      minZoom: 0.3, maxZoom: 4,
+    });
+  }, 50);
+});
+</script>
+</body>
+</html>
