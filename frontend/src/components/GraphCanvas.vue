@@ -104,6 +104,36 @@ function runLayout() {
   cy.layout({ name: props.layout, animate: true, animationDuration: 500, nodeRepulsion: 8000, idealEdgeLength: 80 }).run()
 }
 
+function centerNode(id) {
+  if (!cy) return
+  const node = cy.getElementById(id)
+  if (!node || node.empty()) return
+
+  cy.nodes().removeClass('selected')
+  cy.elements().removeClass('dimmed highlighted')
+
+  node.addClass('selected')
+  const neighborhood = node.neighborhood().add(node)
+  cy.elements().not(neighborhood).addClass('dimmed')
+  neighborhood.edges().addClass('highlighted')
+
+  cy.animate({
+    center: { eles: node },
+    zoom: Math.min(cy.zoom(), 2.5),
+  }, {
+    duration: 400,
+    easing: 'ease-in-out-cubic',
+  })
+}
+
+function clearSelection() {
+  if (!cy) return
+  cy.nodes().removeClass('selected')
+  cy.elements().removeClass('dimmed highlighted')
+}
+
+defineExpose({ centerNode, clearSelection })
+
 watch(() => props.graphData, buildCy, { deep: true })
 watch(() => props.highlightIds, applyHighlights, { deep: true })
 watch(() => props.layout, runLayout)
