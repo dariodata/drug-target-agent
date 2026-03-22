@@ -5,6 +5,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch, toRaw } from 'vue'
 import cytoscape from 'cytoscape'
+import fcose from 'cytoscape-fcose'
+
+cytoscape.use(fcose)
 
 const props = defineProps({
   graphData: { type: Object, default: () => ({ nodes: [], edges: [] }) },
