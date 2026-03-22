@@ -30,45 +30,46 @@
         "max_phase_drug": 4,
         "top_compounds": [
           {
-            "molecule_chembl_id": "CHEMBL553",
-            "pref_name": "ERLOTINIB",
-            "max_phase": 4
-          },
-          {
-            "molecule_chembl_id": "CHEMBL180022",
-            "pref_name": "NERATINIB",
-            "max_phase": 4
-          },
-          {
-            "molecule_chembl_id": "CHEMBL502835",
-            "pref_name": "NINTEDANIB",
-            "max_phase": 4
-          },
-          {
             "molecule_chembl_id": "CHEMBL608533",
             "pref_name": "MIDOSTAURIN",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL221959",
+            "pref_name": "TOFACITINIB",
             "max_phase": 4
           },
           {
             "molecule_chembl_id": "CHEMBL1287853",
             "pref_name": "FEDRATINIB",
             "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1614701",
+            "pref_name": "SELUMETINIB",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL941",
+            "pref_name": "IMATINIB",
+            "max_phase": 4
           }
         ],
-        "druggability_verdict": "LRRK2 is highly druggable as a protein kinase with numerous available 3D structures and a significant number of known bioactive compounds, including approved kinase inhibitors. This, coupled with specific LRRK2 inhibitors progressing through clinical trials for Parkinson's disease, confirms its excellent tractability."
+        "druggability_verdict": "LRRK2 is highly druggable, being a protein kinase with a wealth of existing 3D structures and 54 known bioactive compounds, some of which have reached Phase 4 clinical development."
       },
       "literature": {
         "gene_symbol": "LRRK2",
         "disease": "Parkinson disease",
-        "num_recent_papers": 393,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in the LRRK2 gene are recognized as one of the most frequent genetic causes of Parkinson's disease (PD), with its toxicity and involvement in alpha-synuclein aggregation contributing to disease pathogenesis. LRRK2 is extensively utilized in genetic models of PD and is implicated in proteostasis regulation within the disease context. Furthermore, the LRRK2 genotype influences immune and transcriptomic responses, impacting the host's reaction to viral infections in PD patients.\"\n}\n```",
-        "support_level": "inconclusive",
+        "num_recent_papers": 394,
+        "key_findings_summary": "Mutations in the Leucine-Rich Repeat Kinase 2 (LRRK2) gene are recognized as one of the most frequent genetic causes of Parkinson's disease (PD). LRRK2 contributes to PD pathogenesis through mechanisms such as increased kinase activity, imbalance in protein homeostasis, and involvement in alpha-synuclein aggregation. Furthermore, LRRK2 genotype can influence the immune and transcriptomic responses in PD patients, particularly in the context of viral infections like human pegivirus.",
+        "support_level": "supporting",
         "top_pmids": [
           "32252301",
-          "37469132",
-          "40626361"
+          "20301387",
+          "35743250"
         ]
       },
+      "pathways": [],
       "reasoning": ""
     },
     {
@@ -98,13 +99,13 @@
             "max_phase": 4
           },
           {
-            "molecule_chembl_id": "CHEMBL1368322",
-            "pref_name": "PARAROSANILINE",
+            "molecule_chembl_id": "CHEMBL112570",
+            "pref_name": "CHOLESTEROL",
             "max_phase": 2
           },
           {
-            "molecule_chembl_id": "CHEMBL112570",
-            "pref_name": "CHOLESTEROL",
+            "molecule_chembl_id": "CHEMBL1368322",
+            "pref_name": "PARAROSANILINE",
             "max_phase": 2
           },
           {
@@ -113,25 +114,31 @@
             "max_phase": 2
           },
           {
-            "molecule_chembl_id": "CHEMBL1449184",
+            "molecule_chembl_id": "CHEMBL1459532",
             "pref_name": null,
             "max_phase": 0
           }
         ],
-        "druggability_verdict": "Alpha-synuclein (SNCA) is a challenging target due to its intrinsically disordered nature, yet its involvement in neurodegenerative diseases and the existence of clinical-stage compounds (Phase 4) targeting its aggregation demonstrate some druggability. While lacking a conventional enzyme or receptor active site, its aggregation-prone regions and interactions represent potential sites for modulation."
+        "druggability_verdict": "Despite not being a classical enzyme or receptor, the extensive structural data and the existence of compounds, including one in Phase 4, suggest SNCA is a tractable target, likely through modulation of its aggregation propensity rather than a traditional active site."
       },
       "literature": {
         "gene_symbol": "SNCA",
         "disease": "Parkinson disease",
         "num_recent_papers": 242,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"SNCA is a well-established Parkinson's disease (PD)-related gene. Pathogenic variants in SNCA, such as p.A53V, are identified in early-onset PD patients and contribute to disease risk. Genetic manipulation and overexpression of SNCA are commonly used to induce neurodegeneration in animal models of PD, and SNCA pathogenic variants are recognized in defining genetic forms and prodromal stages of PD for biomarker discovery.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "SNCA is strongly implicated in Parkinson's disease (PD), with pathogenic mutations like p.A53V directly linked to human early-onset PD. The abnormal accumulation and impaired degradation of misfolded SNCA/\u03b1-synuclein, leading to toxic oligomer formation, are central to PD pathology. Consequently, therapeutic strategies for PD often focus on enhancing SNCA clearance or preventing its aggregation, highlighting SNCA as a critical target.",
+        "support_level": "supporting",
         "top_pmids": [
           "32252301",
-          "30966861",
-          "32048886"
+          "30983487",
+          "30966861"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-8863678",
+          "name": "Neurodegenerative Diseases"
+        }
+      ],
       "reasoning": ""
     },
     {
@@ -153,20 +160,21 @@
         "num_known_compounds": 0,
         "max_phase_drug": 0,
         "top_compounds": [],
-        "druggability_verdict": "ATP13A2 is a membrane-bound P-type ATPase with multiple 3D structures, suggesting good structural tractability for drug design. However, the complete absence of known ligands or clinical compounds indicates a lack of chemical starting points, making it a challenging target despite its enzymatic nature and membrane localization."
+        "druggability_verdict": "ATP13A2 appears intrinsically druggable due to its identity as a membrane-bound ATPase with numerous available 3D structures, despite the current lack of known small molecule modulators, suggesting it's an underexplored but tractable target."
       },
       "literature": {
         "gene_symbol": "ATP13A2",
         "disease": "Parkinson disease",
         "num_recent_papers": 30,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in ATP13A2 are a known genetic cause of Kufor-Rekab syndrome (KRS), which is recognized as a distinct autosomal recessive type of Juvenile Parkinson's disease (JPD). The pathogenesis of KRS involves ATP13A2's role in metal metabolism, mitochondrial bioenergetics, and autophagy-lysosomal dysfunction. While ATP13A2 is implicated in general autophagy processes relevant to PD, studies suggest that its genetic variability or expression may not broadly contribute to familial or nonfamilial Parkinson disease beyond the specific KRS subtype.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "Mutations in ATP13A2 (PARK9) are a known genetic cause of early-onset parkinsonism, specifically Kufor-Rakeb Syndrome, and the gene is explicitly listed as a PD-related gene. ATP13A2 plays a critical role in lysosomal function and autophagy, with its dysfunction linked to impaired lysosomal acidification and degradation, mechanisms implicated in Parkinson disease pathogenesis. Decreased ATP13A2 levels have been observed in dopaminergic neurons of sporadic PD patients, suggesting its broader involvement and potential as a therapeutic target.",
+        "support_level": "supporting",
         "top_pmids": [
           "32671737",
           "30144971",
-          "20301402"
+          "29505581"
         ]
       },
+      "pathways": [],
       "reasoning": ""
     },
     {
@@ -192,20 +200,30 @@
         "num_known_compounds": 0,
         "max_phase_drug": 0,
         "top_compounds": [],
-        "druggability_verdict": "Parkin, an E3 ubiquitin ligase with available 3D structures, is considered challenging for conventional druggability due to its complex intracellular localization and complete lack of known bioactive compounds or clinical progress. However, its enzymatic nature makes it a potential target for emerging E3 ligase-targeting modalities like PROTACs."
+        "druggability_verdict": "Despite being an enzyme (E3 ubiquitin ligase) with multiple available 3D structures that enable structure-based design, the complete absence of known bioactive compounds or clinical candidates suggests this target currently poses significant challenges for conventional small molecule drug discovery."
       },
       "literature": {
         "gene_symbol": "PRKN",
         "disease": "Parkinson disease",
-        "num_recent_papers": 95,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in the PRKN gene are a well-established genetic cause of early-onset Parkinson disease, with bi-allelic mutations being particularly frequent in patient cohorts. PRKN, in conjunction with PINK1, plays a critical role in the mitophagy pathway, which is essential for maintaining mitochondrial health and preventing neuronal degeneration in PD. PRKN is widely utilized in genetic models to study the pathogenesis and develop therapies for Parkinson disease.\"\n}\n```",
-        "support_level": "inconclusive",
+        "num_recent_papers": 96,
+        "key_findings_summary": "Mutations in the PRKN (Parkin) gene are a well-established cause of early-onset Parkinson disease (EOPD). PRKN, in conjunction with PINK1, plays a critical role in mitophagy, a process essential for clearing damaged mitochondria, with dysfunction in this pathway contributing to neuronal degeneration. Genetic studies have identified specific pathogenic PRKN variants as frequent contributors to EOPD across diverse populations.",
+        "support_level": "supporting",
         "top_pmids": [
           "32252301",
           "32967533",
           "33570005"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-5205685",
+          "name": "PINK1-PRKN Mediated Mitophagy"
+        },
+        {
+          "reactome_id": "R-HSA-5205647",
+          "name": "Mitophagy"
+        }
+      ],
       "reasoning": ""
     },
     {
@@ -232,42 +250,56 @@
             "max_phase": 4
           },
           {
+            "molecule_chembl_id": "CHEMBL4795354",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL5399637",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL4069057",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
             "molecule_chembl_id": "CHEMBL224214",
             "pref_name": "CARBONYL CYANIDE M-CHLOROPHENYLHYDRAZONE",
             "max_phase": 0
-          },
-          {
-            "molecule_chembl_id": "CHEMBL5439443",
-            "pref_name": null,
-            "max_phase": 0
-          },
-          {
-            "molecule_chembl_id": "CHEMBL5433663",
-            "pref_name": null,
-            "max_phase": 0
-          },
-          {
-            "molecule_chembl_id": "CHEMBL4303250",
-            "pref_name": null,
-            "max_phase": 0
           }
         ],
-        "druggability_verdict": "PINK1 is a highly druggable target as a protein kinase with available 3D structures and a known small molecule (Niclosamide) that has reached Phase 4 clinical development, demonstrating its ligandability. Its complex mitochondrial and cytosolic localization does not significantly impede its druggability for small molecule modulation."
+        "druggability_verdict": "PINK1, as a serine/threonine protein kinase with existing 3D structures and known small molecule modulators, including a Phase 4 compound (Niclosamide), appears highly druggable. Its mitochondrial and cytosolic localization also makes it accessible for targeting."
       },
       "literature": {
         "gene_symbol": "PINK1",
         "disease": "Parkinson disease",
         "num_recent_papers": 317,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in the PINK1 gene are a known cause of early-onset Parkinson disease, highlighting its critical role in disease pathology. PINK1 is a key component of the PINK1-PRKN mitophagy pathway, which is essential for clearing damaged mitochondria, a process frequently impaired in Parkinson disease. Therefore, targeting PINK1-dependent mitophagy pathways, including with PINK1 activators, is being explored as a promising therapeutic strategy for neurodegenerative disorders, with some approaches entering clinical trials.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "Mutations in the PINK1 gene are a known cause of early-onset Parkinson disease, highlighting its direct involvement in the disease's etiology. PINK1 is crucial for the PINK1-PRKN mediated mitophagy pathway, which is essential for clearing damaged mitochondria and preventing neuronal degeneration. Given that mitochondrial dysfunction and mitophagy deficits are hallmarks of Parkinson disease, PINK1 is considered a significant contributor to its pathogenesis and a potential therapeutic target, with PINK1 activators currently in clinical trials.",
+        "support_level": "supporting",
         "top_pmids": [
           "32252301",
           "39809929",
-          "32967533"
+          "36282767"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-5205685",
+          "name": "PINK1-PRKN Mediated Mitophagy"
+        },
+        {
+          "reactome_id": "R-HSA-9614657",
+          "name": "FOXO-mediated transcription of cell death genes"
+        },
+        {
+          "reactome_id": "R-HSA-5205647",
+          "name": "Mitophagy"
+        }
+      ],
       "reasoning": ""
     }
   ],
-  "recommendation": "LRRK2 and PINK1 represent the most promising drug targets for Parkinson's disease, driven by their strong genetic associations, excellent druggability as kinases, and compounds in late-stage clinical development. LRRK2's established role in alpha-synuclein aggregation and ongoing specific inhibitor trials make it highly attractive despite some inconclusive literature, warranting optimization and patient stratification. For PINK1, developing selective activators to enhance its crucial role in the PINK1-PRKN mitophagy pathway is a clear and actionable next step. SNCA, despite its intrinsically disordered nature and thus challenging druggability, merits continued investigation into aggregation modulators given its central pathogenic role and existing clinical-stage compounds. Finally, PRKN, a critical mitophagy regulator, warrants exploration with emerging E3 ligase-targeting modalities like PROTACs."
+  "recommendation": "LRRK2 and PINK1 are the most promising targets, demonstrating strong genetic association with Parkinson's disease, high intrinsic druggability as kinases, and existing compounds in Phase 4 clinical development. SNCA is also a high-priority target, central to PD pathology through alpha-synuclein aggregation, with modulators already in Phase 4 despite its non-classical nature. While ATP13A2 and PRKN are biologically relevant, the complete absence of known small molecule modulators presents a significant drug discovery risk. Therefore, we recommend immediate progression for LRRK2, PINK1, and SNCA, while initiating early lead identification campaigns for ATP13A2 and PRKN to explore their untapped therapeutic potential."
 }

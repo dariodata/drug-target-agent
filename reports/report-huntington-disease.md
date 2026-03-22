@@ -18,11 +18,16 @@
 | PubMed Papers | 532 |
 | Evidence | supporting |
 
-**Druggability:** This target, the Serotonin Transporter (SERT), is highly druggable given its critical role as a cell membrane-bound neurotransmitter symporter, extensive availability of 3D structures, and a rich history of approved drugs (max phase 4) such as paroxetine and venlafaxine targeting it for various clinical indications.
+**Druggability:** This is a highly druggable target, being a cell membrane neurotransmitter transporter with an abundance of known 3D structures. Its druggability is further confirmed by multiple approved drugs in clinical phase 4, such as Paroxetine, which successfully modulate its function.
 
-**Literature:** Huntington disease is caused by an expanded CAG trinucleotide repeat in the HTT gene, leading to a toxic polyglutamine tract in the huntingtin protein that results in neuronal dysfunction and death. Somatic CAG repeat expansion and genetic modifiers, particularly DNA repair genes, significantly influence disease onset and progression. Current therapeutic strategies include HTT-lowering approaches and modulating DNA repair to limit somatic repeat expansion.
+**Literature:** Huntington disease (HD) is an autosomal dominant neurodegenerative disorder unequivocally caused by an expanded CAG trinucleotide repeat in the HTT gene, leading to a toxic polyglutamine tract in the huntingtin protein. This mutation drives neuronal dysfunction and death, resulting in progressive motor, cognitive, and psychiatric decline. Research highlights complex molecular pathogenesis involving mutant HTT's disruption of transcription and cellular functions, with somatic CAG repeat expansion and identified genetic modifiers (especially DNA repair genes) significantly influencing disease course and progression. Therapeutic strategies are actively being developed, including HTT-lowering approaches and interventions targeting somatic repeat expansion.
 
 **PMIDs:** 27188817, 32796930, 41233526
+
+**Biological Pathways (Reactome):**
+
+- [Serotonin clearance from the synaptic cleft](https://reactome.org/content/detail/R-HSA-380615)
+- [Regulation of MECP2 expression and activity](https://reactome.org/content/detail/R-HSA-9022692)
 
 ---
 
@@ -39,7 +44,7 @@
 | PubMed Papers | 0 |
 | Evidence | inconclusive |
 
-**Druggability:** SLC18A2 (VMAT2) is a highly druggable target, as evidenced by its transporter nature, abundant 3D structural data, and the existence of multiple bioactive compounds, including one in clinical phase 4 (Reserpine) and others in phase 3.
+**Druggability:** SLC18A2 (VMAT2) is a highly druggable target due to its membrane localization, abundant 3D structural data, and the existence of multiple known ligands, including a Phase 4 approved drug (Reserpine) and several other compounds in clinical development.
 
 **Literature:** No papers found for this gene-disease pair.
 
@@ -60,11 +65,11 @@
 | PubMed Papers | 7 |
 | Evidence | supporting |
 
-**Druggability:** DRD2 is a highly druggable target due to its identity as a well-established GPCR, its cell membrane localization, the availability of multiple 3D structures, and the existence of numerous known bioactive compounds, including a marketed drug (Clozapine) that reached Phase 4.
+**Druggability:** DRD2 is a highly druggable target, being a well-established GPCR with multiple approved drugs (Phase 4), numerous known bioactive compounds, and a significant number of available 3D structures to facilitate structure-based drug design.
 
-**Literature:** DRD2 exhibits transcriptional dysregulation in Huntington disease (HD) mouse models, with changes in its expression correlating with disease severity. Genetic variations in DRD2 are associated with the manifestation of psychotic symptoms in HD patients. Additionally, DRD2-expressing neurons in the striatum are implicated in the disease pathology, and DRD2, along with DRD3, is considered a potential target for autophagy-inducing therapeutic strategies in HD.
+**Literature:** DRD2 is implicated in Huntington disease (HD) through several mechanisms. Transcriptional dysregulation of DRD2 is observed in HD mouse models, correlating with the severity of HD-like symptoms. Furthermore, genetic variants in DRD2 have been associated with psychotic symptoms in HD patients, suggesting its involvement in psychiatric manifestations. DRD2-positive neurons are also relevant to transcriptional changes in HD and are considered in studies exploring autophagy-modulating therapies for the disease.
 
-**PMIDs:** 40358175, 39884587, 31822756
+**PMIDs:** 40358175, 39884587, 34145635
 
 ---
 
@@ -81,11 +86,16 @@
 | PubMed Papers | 0 |
 | Evidence | inconclusive |
 
-**Druggability:** This target is highly druggable due to its membrane localization, the availability of 7 high-resolution 3D structures for structure-based drug design, and the existence of nearly 100 known compounds, with one reaching Phase 3 clinical trials.
+**Druggability:** SLC2A3 is a highly druggable target, being a membrane-bound glucose transporter with multiple available 3D structures and a substantial number of known small molecule modulators, including one (Resveratrol) that reached Phase 3 clinical trials.
 
 **Literature:** No papers found for this gene-disease pair.
 
 **PMIDs:** 
+
+**Biological Pathways (Reactome):**
+
+- [MECP2 regulates neuronal receptors and channels](https://reactome.org/content/detail/R-HSA-9022699)
+- [Transcriptional Regulation by MECP2](https://reactome.org/content/detail/R-HSA-8986944)
 
 ---
 
@@ -102,9 +112,9 @@
 | PubMed Papers | 1 |
 | Evidence | supporting |
 
-**Druggability:** DRD3 is a highly druggable target, being a cell membrane-localized GPCR with multiple known 3D structures and a significant number of bioactive compounds that have progressed to Phase 2 clinical trials.
+**Druggability:** DRD3 is a highly druggable GPCR located at the cell membrane, supported by numerous known ligands, available 3D structures, and compounds that have progressed to Phase 2 clinical trials. These factors indicate strong potential for further drug discovery efforts.
 
-**Literature:** Activation of Dopamine Receptor D3 (DRD3) induces a persistent form of autophagy in experimental models of Huntington's Disease (HD). This DRD3-mediated autophagy promotes robust clearance of soluble mutated huntingtin (mHTT)/polyQ and provides neuroprotection in striatal neurons. These findings suggest that DRD3-induced autophagy could serve as a safe, disease-modifying intervention for HD.
+**Literature:** Activation of Dopamine Receptor D3 (DRD3) induces a persistent, AMPK-mediated autophagy in experimental models of Huntington disease (HD). This DRD3-mediated autophagy effectively promotes the clearance of toxic mutated huntingtin (mHTT) and provides neuroprotection to striatal neurons. The study suggests that DRD3-induced autophagy could be a safe and disease-modifying therapeutic intervention for HD.
 
 **PMIDs:** 40358175
 
@@ -112,4 +122,4 @@
 
 ## Recommendation
 
-**HTT**, as the directly causal gene, is the primary target with extensive literature (532 papers) supporting its role in Huntington disease pathology and established "HTT-lowering" therapeutic approaches. **DRD3** is a highly promising secondary target, supported by strong mechanistic evidence (1 paper) demonstrating that its activation promotes autophagy, clears mutant huntingtin, and offers neuroprotection, coupled with high druggability and existing Phase 2 compounds. While **DRD2** also shows transcriptional dysregulation (7 papers) and association with symptoms, DRD3's direct disease-modifying mechanism makes it a more immediate focus. In contrast, **SLC18A2** and **SLC2A3**, despite high theoretical druggability, completely lack disease-specific literature, rendering them high-risk and requiring substantial preclinical validation. Therefore, we recommend continued prioritization of HTT-lowering strategies while rapidly advancing preclinical validation and compound development for DRD3 modulators.
+**HTT** represents the primary and most promising drug target for Huntington disease due to its definitive causal role (association score 0.731) and existing focus on HTT-lowering strategies. While targeting the essential HTT protein is complex, **DRD3** offers a compelling complementary approach, with evidence suggesting its activation induces autophagy for mutant HTT clearance. DRD2 could be explored for symptomatic relief, but targets like SLC18A2 and SLC2A3 lack specific supporting literature despite their high druggability. Therefore, we recommend prioritizing HTT-lowering efforts, alongside further validation of DRD3 modulators as disease-modifying agents.

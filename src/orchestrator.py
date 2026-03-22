@@ -82,15 +82,21 @@ async def run_recon(disease_name: str, *, top_n: int = 5) -> ReconReport:
             ))
 
         # Step 3: LLM synthesizes recommendation
-        summary = "\n\n".join(
-            f"**{t.gene_symbol}** ({t.target_name})\n"
-            f"  Association score: {t.association_score:.3f}\n"
-            f"  Druggability: {t.druggability.druggability_verdict}\n"
-            f"  Compounds: {t.druggability.num_known_compounds} (max phase {t.druggability.max_phase_drug})\n"
-            f"  Literature: {t.literature.num_recent_papers} papers, {t.literature.support_level}\n"
-            f"  Key findings: {t.literature.key_findings_summary}"
-            for t in target_reports
-        )
+        def _target_summary(t):
+            s = (
+                f"**{t.gene_symbol}** ({t.target_name})\n"
+                f"  Association score: {t.association_score:.3f}\n"
+                f"  Druggability: {t.druggability.druggability_verdict}\n"
+                f"  Compounds: {t.druggability.num_known_compounds} (max phase {t.druggability.max_phase_drug})\n"
+                f"  Literature: {t.literature.num_recent_papers} papers, {t.literature.support_level}\n"
+                f"  Key findings: {t.literature.key_findings_summary}"
+            )
+            if t.pathways:
+                pathway_names = ", ".join(p.name for p in t.pathways[:5])
+                s += f"\n  Pathways: {pathway_names}"
+            return s
+
+        summary = "\n\n".join(_target_summary(t) for t in target_reports)
         prompt = f"Disease: {disease_name}\n\nTarget summaries:\n{summary}\n\nWrite the recommendation."
         recommendation = await call_llm(prompt)
 
@@ -135,6 +141,16 @@ def format_report_markdown(report: ReconReport) -> str:
             "",
             f"**PMIDs:** {', '.join(t.literature.top_pmids)}",
             "",
+        ])
+
+        if t.pathways:
+            lines.append("**Biological Pathways (Reactome):**")
+            lines.append("")
+            for p in t.pathways:
+                lines.append(f"- [{p.name}](https://reactome.org/content/detail/{p.reactome_id})")
+            lines.append("")
+
+        lines.extend([
             "---",
             "",
         ])

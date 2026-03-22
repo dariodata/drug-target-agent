@@ -16,13 +16,13 @@
 | Known Compounds | 24 |
 | Max Drug Phase | 0 |
 | PubMed Papers | 223 |
-| Evidence | inconclusive |
+| Evidence | supporting |
 
-**Druggability:** As a peptidase (enzyme) with multiple 3D structures available, PSEN1 is intrinsically tractable for structure-based drug discovery. However, the complete absence of clinical-phase compounds among known binders suggests significant challenges, likely stemming from its critical role in the gamma-secretase complex and the potential for severe on-target or off-target toxicities.
+**Druggability:** PSEN1 is an intrinsically druggable target as a catalytic enzyme with a well-defined active site, supported by numerous 3D structures and known compounds. However, the complete lack of clinical progression (max phase 0) for existing modulators suggests substantial challenges, likely related to its function within the gamma-secretase complex and the difficulty of achieving selective therapeutic modulation without adverse effects.
 
-**Literature:** PSEN1 mutations are a direct cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD), including de novo mutations found in sporadic cases. These mutations are widely used in murine models (e.g., APP-PSEN1ΔE9, 5xFAD mice) to induce AD-like pathology and evaluate therapeutic strategies. Moreover, PSEN1 mutation carriers exhibit elevated plasma P-tau217 levels years before estimated symptom onset, highlighting PSEN1 as a significant genetic risk factor linked to AD pathogenesis and microglial dysfunction.
+**Literature:** Mutations in PSEN1 are a significant cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD), including de novo cases, and are strongly associated with characteristic AD biomarker abnormalities, such as elevated plasma P-tau217, decades before symptom onset. Studies utilizing PSEN1-mutant animal models demonstrate its role in amyloid pathology, while broader reviews identify PSEN1 as a key genetic risk factor linked to dysregulated microglial phagocytosis in AD.
 
-**PMIDs:** 30898012, 32722745, 33622188
+**PMIDs:** 30898012, 32722745, 28350801
 
 ---
 
@@ -36,14 +36,23 @@
 | 3D Structure | Yes |
 | Known Compounds | 55 |
 | Max Drug Phase | 3 |
-| PubMed Papers | 1451 |
-| Evidence | inconclusive |
+| PubMed Papers | 1452 |
+| Evidence | supporting |
 
-**Druggability:** APP, as a cell surface receptor with numerous 3D structures and membrane localization, is highly druggable, supported by existing bioactive compounds and historical drug discovery efforts, some of which have reached clinical phases.
+**Druggability:** APP is a cell surface receptor with abundant structural information (227 PDBs), making it highly amenable to structure-based drug design. While various compounds are known and some have reached clinical phases (e.g., Pittsburgh Compound B as a diagnostic), direct therapeutic targeting of its receptor function has proven challenging.
 
-**Literature:** Mutations in the APP gene are a confirmed cause of early-onset Alzheimer disease (AD-EOAD), with genetic screening studies identifying APP duplications in both familial and sporadic cases. Furthermore, post-translational modifications of APP, such as lactylation, play a crucial role in AD pathogenesis by influencing amyloid-beta (Aβ) generation, protein trafficking, and degradation, suggesting novel therapeutic targets. Studies utilizing APP-based animal models also demonstrate that interventions impacting Aβ pathology can ameliorate disease markers, reinforcing APP's central role in the disease.
+**Literature:** Mutations in the amyloid precursor protein (APP) gene are a cause of familial Alzheimer's disease (AD). APP processing, particularly the amyloidogenic pathway that generates amyloid-beta (Aβ) peptides (especially the more toxic Aβ42), is a critical event in AD pathogenesis and the formation of senile plaques. Post-translational modifications, such as APP lactylation, can regulate Aβ production and influence cognitive function, suggesting potential therapeutic strategies by modulating APP processing and metabolism.
 
-**PMIDs:** 39744941, 30266932, 38504517
+**PMIDs:** 39744941, 30266932, 30500566
+
+**Biological Pathways (Reactome):**
+
+- [Transport of HA trimer, NA tetramer and M2 tetramer from the endoplasmic reticulum to the Golgi Apparatus](https://reactome.org/content/detail/R-HSA-168874)
+- [Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus](https://reactome.org/content/detail/R-HSA-159763)
+- [Regulation of NPAS4 gene transcription](https://reactome.org/content/detail/R-HSA-9768777)
+- [Regulated proteolysis of p75NTR](https://reactome.org/content/detail/R-HSA-193692)
+- [Neurodegenerative Diseases](https://reactome.org/content/detail/R-HSA-8863678)
+- [Signaling by ERBB4](https://reactome.org/content/detail/R-HSA-1236394)
 
 ---
 
@@ -58,13 +67,13 @@
 | Known Compounds | 9 |
 | Max Drug Phase | 0 |
 | PubMed Papers | 102 |
-| Evidence | inconclusive |
+| Evidence | supporting |
 
-**Druggability:** PSEN2, a membrane-bound enzyme with available 3D structures, presents good druggability potential for structure-based design. While early-stage compounds exist, the lack of clinical progress suggests challenges in developing selective modulators without off-target effects, possibly related to its critical roles in the gamma-secretase complex and calcium homeostasis.
+**Druggability:** PSEN2 is a transmembrane peptidase with known 3D structures, suggesting a potentially druggable enzymatic site. However, the lack of compounds beyond preclinical phases and historical clinical failures of pan-gamma-secretase inhibitors (due to off-target effects like Notch modulation) indicate high hurdles for successful therapeutic development.
 
-**Literature:** Mutations in PSEN2 are consistently identified as a cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD). Genetic screening studies report pathogenic PSEN2 variants in a subset of familial and sporadic EOAD cases, alongside mutations in APP and PSEN1, confirming its role in AD pathogenesis.
+**Literature:** Mutations in PSEN2 are consistently identified as a cause of autosomal dominant early-onset familial Alzheimer disease (FAD-EOAD) and are also found in sporadic early-onset AD and its variants like posterior cortical atrophy. Specific PSEN2 variants, such as N141I, have been shown to impair γ-secretase activity and dysregulate microglia, leading to exaggerated inflammatory responses that promote disease progression. These findings highlight PSEN2's role in AD pathogenesis and the importance of its genetic screening.
 
-**PMIDs:** 28350801, 20301340, 35678406
+**PMIDs:** 28350801, 20301340, 32741831
 
 ---
 
@@ -78,14 +87,21 @@
 | 3D Structure | Yes |
 | Known Compounds | 0 |
 | Max Drug Phase | 0 |
-| PubMed Papers | 1588 |
-| Evidence | inconclusive |
+| PubMed Papers | 1596 |
+| Evidence | supporting |
 
-**Druggability:** While its extracellular location and numerous 3D structures are favorable for drug discovery, the absence of known bioactive compounds or clinical progress indicates APOE currently poses a significant challenge for conventional small-molecule drug development.
+**Druggability:** Despite the current lack of known small molecule modulators in clinical development, APOE is a potentially druggable target given its extracellular location and abundant structural data, which could enable the development of agents to modulate its critical protein-protein or protein-lipid interactions.
 
-**Literature:** Apolipoprotein E (APOE) is consistently identified as the strongest genetic risk factor for late-onset Alzheimer disease (AD), with the ε4 allele increasing risk and the ε2 allele conferring protection relative to the common ε3 allele. APOE influences AD pathogenesis through multiple mechanisms, including driving amyloid and tau pathology, modulating neuroinflammation, and affecting lipid transport, synaptic function, and cerebrovascular health. Its multifaceted roles make APOE a significant target for precision medicine and therapeutic strategies in AD.
+**Literature:** Apolipoprotein E (APOE) is consistently identified as the single greatest genetic risk factor for sporadic Alzheimer disease (AD), with the APOEε4 allele increasing risk and the APOEε2 allele being protective. APOE influences AD pathogenesis through multiple pathways, including driving amyloid and tau pathology, modulating neuroinflammation, lipid transport, synaptic integrity, and glucose metabolism. Understanding APOE's multifaceted roles is crucial for developing targeted AD therapies.
 
-**PMIDs:** 31367008, 23296339, 38906999
+**PMIDs:** 31367008, 38906999, 23296339
+
+**Biological Pathways (Reactome):**
+
+- [Defective Base Excision Repair Associated with NEIL3](https://reactome.org/content/detail/R-HSA-9629232)
+- [Platelet sensitization by LDL](https://reactome.org/content/detail/R-HSA-432142)
+- [NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux](https://reactome.org/content/detail/R-HSA-9029569)
+- [HDL remodeling](https://reactome.org/content/detail/R-HSA-8964058)
 
 ---
 
@@ -100,13 +116,17 @@
 | Known Compounds | 63 |
 | Max Drug Phase | 0 |
 | PubMed Papers | 1 |
-| Evidence | inconclusive |
+| Evidence | supporting |
 
-**Druggability:** GRIN1 is a highly druggable target, being a well-characterized membrane-bound ligand-gated ion channel with numerous 3D structures suitable for structure-based drug design. While over 60 compounds are known, the absence of clinical progress beyond phase 0 indicates challenges in drug development, despite the inherent tractability of the target class.
+**Druggability:** GRIN1 is a highly druggable membrane-bound ion channel receptor with abundant structural data, making it a prime candidate for drug development. However, the absence of compounds beyond Phase 0 indicates significant hurdles, likely related to selectivity, safety, or ADME, despite its established biological importance.
 
-**Literature:** Carriers of the rs11146020-G allele in GRIN1 are associated with an earlier age at onset of Alzheimer's disease dementia, particularly in APOE-ε4 non-carriers. This GRIN1 variant also influences behavioral symptoms in different dementia stages, leading to a complex impact on the disease course, including less aberrant motor behavior and apathy, but more disinhibition, often modulated by APOE-ε4 status.
+**Literature:** The GRIN1 rs11146020-G allele is associated with an earlier age of Alzheimer's disease dementia onset, particularly in APOE-ε4 non-carriers. This allele also modulates behavioral symptoms throughout the disease course, potentially leading to a milder disease progression by softening the behavioral burden.
 
 **PMIDs:** 40441773
+
+**Biological Pathways (Reactome):**
+
+- [Assembly and cell surface presentation of NMDA receptors](https://reactome.org/content/detail/R-HSA-9609736)
 
 ---
 
@@ -114,4 +134,4 @@
 
 **Recommendation:**
 
-APP is the most promising immediate drug target due to its direct causal role in early-onset AD, high intrinsic druggability, and historical progress with compounds reaching clinical Phase 3. While PSEN1 and PSEN2 also represent direct genetic causes of AD, their clinical translation is challenging, as evidenced by the complete absence of clinical-phase compounds and the historical toxicity associated with gamma-secretase modulation. APOE is a critical, high-impact target for late-onset AD as the strongest genetic risk factor, but its current undruggability (zero known compounds) necessitates long-term, innovative discovery efforts beyond conventional small molecules. Therefore, we recommend prioritizing APP, focusing on highly specific Aβ modulatory strategies to overcome past clinical failures, while exploring novel, selective approaches for PSEN1/PSEN2 and initiating early-stage target validation for APOE with an emphasis on new modalities.
+PSEN1 and APP emerge as the most promising targets due to their strong genetic links to familial Alzheimer's disease and direct involvement in amyloid pathology. While PSEN1 is an intrinsically druggable enzyme, historical challenges with pan-gamma-secretase inhibitors highlight the need for highly selective modulators to avoid off-target effects. Simultaneously, APOE is a critical, high-potential target, representing the leading genetic risk factor for sporadic AD with multifaceted roles across amyloid, tau, and neuroinflammation. Future efforts should prioritize novel small molecule or biologic strategies that achieve precise modulation of PSEN1 and APP processing, alongside exploring therapeutics that modulate APOE's protein-lipid interactions and allele-specific effects.

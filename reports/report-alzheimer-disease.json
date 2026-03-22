@@ -29,45 +29,46 @@
         "max_phase_drug": 0,
         "top_compounds": [
           {
-            "molecule_chembl_id": "CHEMBL392068",
+            "molecule_chembl_id": "CHEMBL302004",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL2017499",
+            "molecule_chembl_id": "CHEMBL2398569",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL2017498",
+            "molecule_chembl_id": "CHEMBL2169952",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL2159688",
+            "molecule_chembl_id": "CHEMBL2398572",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL2159509",
+            "molecule_chembl_id": "CHEMBL2159690",
             "pref_name": null,
             "max_phase": 0
           }
         ],
-        "druggability_verdict": "As a peptidase (enzyme) with multiple 3D structures available, PSEN1 is intrinsically tractable for structure-based drug discovery. However, the complete absence of clinical-phase compounds among known binders suggests significant challenges, likely stemming from its critical role in the gamma-secretase complex and the potential for severe on-target or off-target toxicities."
+        "druggability_verdict": "PSEN1 is an intrinsically druggable target as a catalytic enzyme with a well-defined active site, supported by numerous 3D structures and known compounds. However, the complete lack of clinical progression (max phase 0) for existing modulators suggests substantial challenges, likely related to its function within the gamma-secretase complex and the difficulty of achieving selective therapeutic modulation without adverse effects."
       },
       "literature": {
         "gene_symbol": "PSEN1",
         "disease": "Alzheimer disease",
         "num_recent_papers": 223,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"PSEN1 mutations are a direct cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD), including de novo mutations found in sporadic cases. These mutations are widely used in murine models (e.g., APP-PSEN1\u0394E9, 5xFAD mice) to induce AD-like pathology and evaluate therapeutic strategies. Moreover, PSEN1 mutation carriers exhibit elevated plasma P-tau217 levels years before estimated symptom onset, highlighting PSEN1 as a significant genetic risk factor linked to AD pathogenesis and microglial dysfunction.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "Mutations in PSEN1 are a significant cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD), including de novo cases, and are strongly associated with characteristic AD biomarker abnormalities, such as elevated plasma P-tau217, decades before symptom onset. Studies utilizing PSEN1-mutant animal models demonstrate its role in amyloid pathology, while broader reviews identify PSEN1 as a key genetic risk factor linked to dysregulated microglial phagocytosis in AD.",
+        "support_level": "supporting",
         "top_pmids": [
           "30898012",
           "32722745",
-          "33622188"
+          "28350801"
         ]
       },
+      "pathways": [],
       "reasoning": ""
     },
     {
@@ -112,35 +113,61 @@
             "max_phase": 2
           },
           {
-            "molecule_chembl_id": "CHEMBL93270",
+            "molecule_chembl_id": "CHEMBL309920",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL330529",
+            "molecule_chembl_id": "CHEMBL360473",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL93118",
+            "molecule_chembl_id": "CHEMBL81260",
             "pref_name": null,
             "max_phase": 0
           }
         ],
-        "druggability_verdict": "APP, as a cell surface receptor with numerous 3D structures and membrane localization, is highly druggable, supported by existing bioactive compounds and historical drug discovery efforts, some of which have reached clinical phases."
+        "druggability_verdict": "APP is a cell surface receptor with abundant structural information (227 PDBs), making it highly amenable to structure-based drug design. While various compounds are known and some have reached clinical phases (e.g., Pittsburgh Compound B as a diagnostic), direct therapeutic targeting of its receptor function has proven challenging."
       },
       "literature": {
         "gene_symbol": "APP",
         "disease": "Alzheimer disease",
-        "num_recent_papers": 1451,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in the APP gene are a confirmed cause of early-onset Alzheimer disease (AD-EOAD), with genetic screening studies identifying APP duplications in both familial and sporadic cases. Furthermore, post-translational modifications of APP, such as lactylation, play a crucial role in AD pathogenesis by influencing amyloid-beta (A\u03b2) generation, protein trafficking, and degradation, suggesting novel therapeutic targets. Studies utilizing APP-based animal models also demonstrate that interventions impacting A\u03b2 pathology can ameliorate disease markers, reinforcing APP's central role in the disease.\"\n}\n```",
-        "support_level": "inconclusive",
+        "num_recent_papers": 1452,
+        "key_findings_summary": "Mutations in the amyloid precursor protein (APP) gene are a cause of familial Alzheimer's disease (AD). APP processing, particularly the amyloidogenic pathway that generates amyloid-beta (A\u03b2) peptides (especially the more toxic A\u03b242), is a critical event in AD pathogenesis and the formation of senile plaques. Post-translational modifications, such as APP lactylation, can regulate A\u03b2 production and influence cognitive function, suggesting potential therapeutic strategies by modulating APP processing and metabolism.",
+        "support_level": "supporting",
         "top_pmids": [
           "39744941",
           "30266932",
-          "38504517"
+          "30500566"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-168874",
+          "name": "Transport of HA trimer, NA tetramer and M2 tetramer from the endoplasmic reticulum to the Golgi Apparatus"
+        },
+        {
+          "reactome_id": "R-HSA-159763",
+          "name": "Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus"
+        },
+        {
+          "reactome_id": "R-HSA-9768777",
+          "name": "Regulation of NPAS4 gene transcription"
+        },
+        {
+          "reactome_id": "R-HSA-193692",
+          "name": "Regulated proteolysis of p75NTR"
+        },
+        {
+          "reactome_id": "R-HSA-8863678",
+          "name": "Neurodegenerative Diseases"
+        },
+        {
+          "reactome_id": "R-HSA-1236394",
+          "name": "Signaling by ERBB4"
+        }
+      ],
       "reasoning": ""
     },
     {
@@ -163,7 +190,7 @@
         "max_phase_drug": 0,
         "top_compounds": [
           {
-            "molecule_chembl_id": "CHEMBL2159688",
+            "molecule_chembl_id": "CHEMBL2159689",
             "pref_name": null,
             "max_phase": 0
           },
@@ -173,12 +200,7 @@
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL2159509",
-            "pref_name": null,
-            "max_phase": 0
-          },
-          {
-            "molecule_chembl_id": "CHEMBL2159689",
+            "molecule_chembl_id": "CHEMBL2159687",
             "pref_name": null,
             "max_phase": 0
           },
@@ -186,22 +208,28 @@
             "molecule_chembl_id": "CHEMBL2159511",
             "pref_name": null,
             "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL2159510",
+            "pref_name": null,
+            "max_phase": 0
           }
         ],
-        "druggability_verdict": "PSEN2, a membrane-bound enzyme with available 3D structures, presents good druggability potential for structure-based design. While early-stage compounds exist, the lack of clinical progress suggests challenges in developing selective modulators without off-target effects, possibly related to its critical roles in the gamma-secretase complex and calcium homeostasis."
+        "druggability_verdict": "PSEN2 is a transmembrane peptidase with known 3D structures, suggesting a potentially druggable enzymatic site. However, the lack of compounds beyond preclinical phases and historical clinical failures of pan-gamma-secretase inhibitors (due to off-target effects like Notch modulation) indicate high hurdles for successful therapeutic development."
       },
       "literature": {
         "gene_symbol": "PSEN2",
         "disease": "Alzheimer disease",
         "num_recent_papers": 102,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Mutations in PSEN2 are consistently identified as a cause of autosomal dominant early-onset Alzheimer disease (AD-EOAD). Genetic screening studies report pathogenic PSEN2 variants in a subset of familial and sporadic EOAD cases, alongside mutations in APP and PSEN1, confirming its role in AD pathogenesis.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "Mutations in PSEN2 are consistently identified as a cause of autosomal dominant early-onset familial Alzheimer disease (FAD-EOAD) and are also found in sporadic early-onset AD and its variants like posterior cortical atrophy. Specific PSEN2 variants, such as N141I, have been shown to impair \u03b3-secretase activity and dysregulate microglia, leading to exaggerated inflammatory responses that promote disease progression. These findings highlight PSEN2's role in AD pathogenesis and the importance of its genetic screening.",
+        "support_level": "supporting",
         "top_pmids": [
           "28350801",
           "20301340",
-          "35678406"
+          "32741831"
         ]
       },
+      "pathways": [],
       "reasoning": ""
     },
     {
@@ -224,20 +252,38 @@
         "num_known_compounds": 0,
         "max_phase_drug": 0,
         "top_compounds": [],
-        "druggability_verdict": "While its extracellular location and numerous 3D structures are favorable for drug discovery, the absence of known bioactive compounds or clinical progress indicates APOE currently poses a significant challenge for conventional small-molecule drug development."
+        "druggability_verdict": "Despite the current lack of known small molecule modulators in clinical development, APOE is a potentially druggable target given its extracellular location and abundant structural data, which could enable the development of agents to modulate its critical protein-protein or protein-lipid interactions."
       },
       "literature": {
         "gene_symbol": "APOE",
         "disease": "Alzheimer disease",
-        "num_recent_papers": 1588,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Apolipoprotein E (APOE) is consistently identified as the strongest genetic risk factor for late-onset Alzheimer disease (AD), with the \u03b54 allele increasing risk and the \u03b52 allele conferring protection relative to the common \u03b53 allele. APOE influences AD pathogenesis through multiple mechanisms, including driving amyloid and tau pathology, modulating neuroinflammation, and affecting lipid transport, synaptic function, and cerebrovascular health. Its multifaceted roles make APOE a significant target for precision medicine and therapeutic strategies in AD.\"\n}\n```",
-        "support_level": "inconclusive",
+        "num_recent_papers": 1596,
+        "key_findings_summary": "Apolipoprotein E (APOE) is consistently identified as the single greatest genetic risk factor for sporadic Alzheimer disease (AD), with the APOE\u03b54 allele increasing risk and the APOE\u03b52 allele being protective. APOE influences AD pathogenesis through multiple pathways, including driving amyloid and tau pathology, modulating neuroinflammation, lipid transport, synaptic integrity, and glucose metabolism. Understanding APOE's multifaceted roles is crucial for developing targeted AD therapies.",
+        "support_level": "supporting",
         "top_pmids": [
           "31367008",
-          "23296339",
-          "38906999"
+          "38906999",
+          "23296339"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-9629232",
+          "name": "Defective Base Excision Repair Associated with NEIL3"
+        },
+        {
+          "reactome_id": "R-HSA-432142",
+          "name": "Platelet sensitization by LDL"
+        },
+        {
+          "reactome_id": "R-HSA-9029569",
+          "name": "NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux"
+        },
+        {
+          "reactome_id": "R-HSA-8964058",
+          "name": "HDL remodeling"
+        }
+      ],
       "reasoning": ""
     },
     {
@@ -260,45 +306,51 @@
         "max_phase_drug": 0,
         "top_compounds": [
           {
-            "molecule_chembl_id": "CHEMBL354295",
+            "molecule_chembl_id": "CHEMBL82626",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL247035",
+            "molecule_chembl_id": "CHEMBL115883",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL429296",
+            "molecule_chembl_id": "CHEMBL354003",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL164322",
+            "molecule_chembl_id": "CHEMBL401100",
             "pref_name": null,
             "max_phase": 0
           },
           {
-            "molecule_chembl_id": "CHEMBL115761",
+            "molecule_chembl_id": "CHEMBL82963",
             "pref_name": null,
             "max_phase": 0
           }
         ],
-        "druggability_verdict": "GRIN1 is a highly druggable target, being a well-characterized membrane-bound ligand-gated ion channel with numerous 3D structures suitable for structure-based drug design. While over 60 compounds are known, the absence of clinical progress beyond phase 0 indicates challenges in drug development, despite the inherent tractability of the target class."
+        "druggability_verdict": "GRIN1 is a highly druggable membrane-bound ion channel receptor with abundant structural data, making it a prime candidate for drug development. However, the absence of compounds beyond Phase 0 indicates significant hurdles, likely related to selectivity, safety, or ADME, despite its established biological importance."
       },
       "literature": {
         "gene_symbol": "GRIN1",
         "disease": "Alzheimer disease",
         "num_recent_papers": 1,
-        "key_findings_summary": "```json\n{\n  \"support_level\": \"supporting\",\n  \"key_findings\": \"Carriers of the rs11146020-G allele in GRIN1 are associated with an earlier age at onset of Alzheimer's disease dementia, particularly in APOE-\u03b54 non-carriers. This GRIN1 variant also influences behavioral symptoms in different dementia stages, leading to a complex impact on the disease course, including less aberrant motor behavior and apathy, but more disinhibition, often modulated by APOE-\u03b54 status.\"\n}\n```",
-        "support_level": "inconclusive",
+        "key_findings_summary": "The GRIN1 rs11146020-G allele is associated with an earlier age of Alzheimer's disease dementia onset, particularly in APOE-\u03b54 non-carriers. This allele also modulates behavioral symptoms throughout the disease course, potentially leading to a milder disease progression by softening the behavioral burden.",
+        "support_level": "supporting",
         "top_pmids": [
           "40441773"
         ]
       },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-9609736",
+          "name": "Assembly and cell surface presentation of NMDA receptors"
+        }
+      ],
       "reasoning": ""
     }
   ],
-  "recommendation": "**Recommendation:**\n\nAPP is the most promising immediate drug target due to its direct causal role in early-onset AD, high intrinsic druggability, and historical progress with compounds reaching clinical Phase 3. While PSEN1 and PSEN2 also represent direct genetic causes of AD, their clinical translation is challenging, as evidenced by the complete absence of clinical-phase compounds and the historical toxicity associated with gamma-secretase modulation. APOE is a critical, high-impact target for late-onset AD as the strongest genetic risk factor, but its current undruggability (zero known compounds) necessitates long-term, innovative discovery efforts beyond conventional small molecules. Therefore, we recommend prioritizing APP, focusing on highly specific A\u03b2 modulatory strategies to overcome past clinical failures, while exploring novel, selective approaches for PSEN1/PSEN2 and initiating early-stage target validation for APOE with an emphasis on new modalities."
+  "recommendation": "**Recommendation:**\n\nPSEN1 and APP emerge as the most promising targets due to their strong genetic links to familial Alzheimer's disease and direct involvement in amyloid pathology. While PSEN1 is an intrinsically druggable enzyme, historical challenges with pan-gamma-secretase inhibitors highlight the need for highly selective modulators to avoid off-target effects. Simultaneously, APOE is a critical, high-potential target, representing the leading genetic risk factor for sporadic AD with multifaceted roles across amyloid, tau, and neuroinflammation. Future efforts should prioritize novel small molecule or biologic strategies that achieve precise modulation of PSEN1 and APP processing, alongside exploring therapeutics that modulate APOE's protein-lipid interactions and allele-specific effects."
 }
