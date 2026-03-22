@@ -20,10 +20,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="d in diseases" :key="d.efo_id" class="clickable" @click="$router.push('/disease/' + d.efo_id)">
+            <tr v-for="d in diseases" :key="d.efo_id" class="clickable" @click="$router.push({ path: '/', query: { select: d.efo_id } })">
               <td>{{ d.name }}</td>
               <td>{{ d.target_count }}</td>
-              <td><router-link :to="'/disease/' + d.efo_id" class="btn" style="font-size:12px; padding:4px 10px;">View</router-link></td>
+              <td><router-link :to="{ path: '/', query: { select: d.efo_id } }" class="btn" style="font-size:12px; padding:4px 10px;">View</router-link></td>
             </tr>
           </tbody>
         </table>
