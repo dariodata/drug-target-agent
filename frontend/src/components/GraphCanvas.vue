@@ -26,8 +26,8 @@ const typeColors = {
 }
 
 const typeShapes = {
-  disease: 'diamond', gene: 'ellipse', protein: 'round-rectangle',
-  compound: 'hexagon', paper: 'rectangle', pathway: 'triangle',
+  disease: 'diamond', gene: 'ellipse', protein: 'ellipse',
+  compound: 'ellipse', paper: 'rectangle', pathway: 'ellipse',
 }
 
 const typeSizes = {
