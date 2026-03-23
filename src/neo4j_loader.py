@@ -16,7 +16,10 @@ import os
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
 from neo4j import AsyncGraphDatabase
+
+load_dotenv()
 
 from src.models import ReconReport
 

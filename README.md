@@ -75,6 +75,7 @@ uv run python -m src.orchestrator "Alzheimer disease"
 | ChEMBL | No | Free, no registration |
 | PubMed | Email only | Just set `NCBI_EMAIL` in `.env` |
 | OpenAI | Yes | [platform.openai.com](https://platform.openai.com) |
+| Neo4j | Password | Local instance or [Neo4j Aura](https://neo4j.com/cloud/aura/) free tier |
 
 ## Project Structure
 
@@ -102,9 +103,44 @@ uv run pytest -v
 
 All tests use mocked API responses (no live API calls required).
 
+## Loading Reports into Neo4j
+
+Each pipeline run produces a pair of files in `reports/`: a `.json` file (structured data) and a `.md` file (human-readable report). The JSON files can be ingested into a Neo4j graph database for cross-disease analysis.
+
+### Prerequisites
+
+1. A running Neo4j instance (local or remote)
+2. Set the connection variables in `.env`:
+   ```
+   NEO4J_URI=bolt://localhost:7687
+   NEO4J_USER=neo4j
+   NEO4J_PASSWORD=your-password
+   ```
+
+### Ingest reports
+
+```bash
+# Load a single report
+uv run python -m src.neo4j_loader reports/report-migraine.json
+
+# Load all reports at once
+uv run python -m src.neo4j_loader reports/
+```
+
+The loader creates the following graph schema:
+
+```
+(Disease)-[:ASSOCIATED_WITH]->(Gene)-[:ENCODES]->(Protein)-[:HAS_COMPOUND]->(Compound)
+                                   `-[:MENTIONED_IN]->(Paper)
+                                   `-[:INVOLVED_IN]->(Pathway)
+(Report)-[:COVERS]->(Disease)
+```
+
+Uniqueness constraints are created automatically on first run (Disease.efo_id, Gene.ensembl_id, Protein.uniprot_acc, etc.), so running the loader multiple times is safe — existing nodes are merged, not duplicated.
+
 ## Limitations & Next Steps
 
 - Single association source: Only Open Targets for gene-disease links (could add GWAS Catalog, DisGeNET)
 - Abstracts only: PubMed search uses abstracts, not full text
 - No clinical trial data: Could add ClinicalTrials.gov agent
-- Phase 2: Store results in a Neo4j/Kuzu knowledge graph for cross-disease target comparison and shared pathway discovery
+- Neo4j graph is loaded and can be explored in graph explorer but is not yet fully queryable from a web UI (planned)
