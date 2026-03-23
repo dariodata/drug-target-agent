@@ -1,0 +1,413 @@
+{
+  "disease": "amyotrophic lateral sclerosis",
+  "disease_id": "ENSG00000142168",
+  "targets": [
+    {
+      "gene_symbol": "SOD1",
+      "ensembl_id": "ENSG00000142168",
+      "target_name": "superoxide dismutase 1",
+      "association_score": 0.8897871079625572,
+      "druggability": {
+        "gene_symbol": "SOD1",
+        "uniprot_accession": "P00441",
+        "protein_class": "Belongs to the Cu-Zn superoxide dismutase family",
+        "subcellular_locations": [
+          "Cytoplasm",
+          "Nucleus"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 67,
+        "max_phase_drug": 0,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL282738",
+            "pref_name": "Manganese (III) Complex",
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL280770",
+            "pref_name": "Manganese (III) Complex",
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL2165605",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL405899",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL282142",
+            "pref_name": "Manganese (III) Complex",
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "SOD1 is an enzyme with numerous 3D structures, which is favorable for structure-based drug design. However, its intracellular location combined with a lack of compounds progressing beyond preclinical stages (max phase 0) suggests significant challenges in developing drug-like molecules with sufficient cell permeability and efficacy for this target."
+      },
+      "literature": {
+        "gene_symbol": "SOD1",
+        "disease": "amyotrophic lateral sclerosis",
+        "num_recent_papers": 4827,
+        "key_findings_summary": "Mutations in the SOD1 gene were the first identified genetic cause of amyotrophic lateral sclerosis (ALS), particularly for familial cases, and are also implicated in sporadic forms. These mutations lead to a toxic gain-of-function, characterized by protein misfolding and aggregation, which drives motor neuron degeneration. Therapeutic strategies aimed at reducing the levels of toxic SOD1 protein, such as gene silencing, show promise for treating SOD1-related ALS.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "25492944",
+          "34996976",
+          "32125907"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-9632693",
+          "name": "Evasion of Oxidative Stress Induced Senescence Due to p16INK4A Defects"
+        },
+        {
+          "reactome_id": "R-HSA-8950505",
+          "name": "Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation"
+        },
+        {
+          "reactome_id": "R-HSA-3299685",
+          "name": "Detoxification of Reactive Oxygen Species"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "TARDBP",
+      "ensembl_id": "ENSG00000120948",
+      "target_name": "TAR DNA binding protein",
+      "association_score": 0.8548540575157689,
+      "druggability": {
+        "gene_symbol": "TARDBP",
+        "uniprot_accession": "Q13148",
+        "protein_class": "Unknown",
+        "subcellular_locations": [
+          "Nucleus",
+          "Cytoplasm",
+          "Cytoplasm, Stress granule",
+          "Mitochondrion"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 100,
+        "max_phase_drug": 0,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL1355230",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL2134794",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1708784",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3189336",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1349802",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "Despite numerous 3D structures available, targeting this intracellular RNA-binding protein with broad and essential cellular functions presents significant challenges for small molecule modulation. The absence of compounds beyond preclinical stages reflects the difficulty in developing selective and efficacious drugs for this target."
+      },
+      "literature": {
+        "gene_symbol": "TARDBP",
+        "disease": "amyotrophic lateral sclerosis",
+        "num_recent_papers": 648,
+        "key_findings_summary": "TARDBP mutations are identified as a significant genetic cause, accounting for 3-10% of familial and a smaller proportion (less than 1-2%) of sporadic amyotrophic lateral sclerosis (ALS) cases. Crucially, the TDP-43 protein (encoded by TARDBP) forms pathological inclusions and exhibits mislocalization in the majority (up to 97%) of both sporadic and familial ALS patients, establishing TDP-43 proteinopathy as a central neuropathological hallmark. These aggregates lead to widespread cellular dysfunction, highlighting the gene's pivotal role in ALS pathogenesis.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "30837838",
+          "38967083",
+          "28057713"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-8863678",
+          "name": "Neurodegenerative Diseases"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "FUS",
+      "ensembl_id": "ENSG00000089280",
+      "target_name": "FUS RNA binding protein",
+      "association_score": 0.8448885155895403,
+      "druggability": {
+        "gene_symbol": "FUS",
+        "uniprot_accession": "P35637",
+        "protein_class": "Belongs to the RRM TET family",
+        "subcellular_locations": [
+          "Nucleus"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 3,
+        "max_phase_drug": 2,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL1232461",
+            "pref_name": "MOLIBRESIB",
+            "max_phase": 2
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3752910",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL5653589",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "Despite its challenging nuclear localization and role as an RNA-binding protein, FUS is a druggable target given the availability of 23 3D structures and a compound (Molibresib) that has reached Phase 2 clinical trials."
+      },
+      "literature": {
+        "gene_symbol": "FUS",
+        "disease": "amyotrophic lateral sclerosis",
+        "num_recent_papers": 1387,
+        "key_findings_summary": "FUS mutations are a confirmed genetic cause of a subset of amyotrophic lateral sclerosis (ALS), often referred to as ALS6, characterized by early onset, rapid progression, and pathological FUS protein accumulation. Dysfunction of FUS, an RNA-binding protein, is implicated in abnormal RNA metabolism and neurodegeneration in these cases. Emerging therapeutic strategies, such as antisense oligonucleotide silencing of FUS, show promise in models and early clinical studies by reducing FUS levels and mitigating disease progression.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "20864052",
+          "39862884",
+          "37926865"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-8853333",
+          "name": "Signaling by FGFR2 fusions"
+        },
+        {
+          "reactome_id": "R-HSA-168270",
+          "name": "Fusion and Uncoating of the Influenza Virion"
+        },
+        {
+          "reactome_id": "R-HSA-6802952",
+          "name": "Signaling by BRAF and RAF1 fusions"
+        },
+        {
+          "reactome_id": "R-HSA-9636383",
+          "name": "Prevention of phagosomal-lysosomal fusion"
+        },
+        {
+          "reactome_id": "R-HSA-9733458",
+          "name": "Induction of Cell-Cell Fusion"
+        },
+        {
+          "reactome_id": "R-HSA-8853334",
+          "name": "Signaling by FGFR3 fusions in cancer"
+        },
+        {
+          "reactome_id": "R-HSA-9703465",
+          "name": "Signaling by FLT3 fusion proteins"
+        },
+        {
+          "reactome_id": "R-HSA-1839117",
+          "name": "Signaling by cytosolic FGFR1 fusion mutants"
+        },
+        {
+          "reactome_id": "R-HSA-8853336",
+          "name": "Signaling by plasma membrane FGFR1 fusions"
+        },
+        {
+          "reactome_id": "R-HSA-168288",
+          "name": "Fusion of the Influenza Virion to the Host Cell Endosome"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "TBK1",
+      "ensembl_id": "ENSG00000183735",
+      "target_name": "TANK binding kinase 1",
+      "association_score": 0.8305659475314657,
+      "druggability": {
+        "gene_symbol": "TBK1",
+        "uniprot_accession": "Q9UHD2",
+        "protein_class": "Belongs to the protein kinase superfamily. Ser/Thr protein kinase family. I-kappa-B kinase subfamily",
+        "subcellular_locations": [
+          "Cytoplasm"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 84,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL941",
+            "pref_name": "IMATINIB",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL601719",
+            "pref_name": "CRIZOTINIB",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL608533",
+            "pref_name": "MIDOSTAURIN",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL576982",
+            "pref_name": "QUIZARTINIB",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1614701",
+            "pref_name": "SELUMETINIB",
+            "max_phase": 4
+          }
+        ],
+        "druggability_verdict": "TBK1 is a highly druggable target, being a protein kinase, a well-established drug class, supported by 25 available 3D structures and numerous known bioactive compounds, with some reaching Phase 4 clinical development."
+      },
+      "literature": {
+        "gene_symbol": "TBK1",
+        "disease": "amyotrophic lateral sclerosis",
+        "num_recent_papers": 193,
+        "key_findings_summary": "TBK1 has been consistently identified as an ALS-associated gene and a major genetic cause of amyotrophic lateral sclerosis, often with comorbidity to frontotemporal dementia. Studies highlight its crucial role in molecular pathways relevant to ALS, including autophagy and innate immunity, and demonstrate that partial loss of TBK1 function can lead to age-dependent neurodegeneration. Consequently, TBK1 is considered a prioritized druggable target for ALS, with genetic and pharmacological evidence supporting its inhibition for therapeutic intervention.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "29154141",
+          "25700176",
+          "30146158"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-936964",
+          "name": "Activation of IRF3, IRF7 mediated by TBK1, IKK\u03b5 (IKBKE)"
+        },
+        {
+          "reactome_id": "R-HSA-9824878",
+          "name": "Regulation of TBK1, IKK\u03b5 (IKBKE)-mediated activation of IRF3, IRF7 "
+        },
+        {
+          "reactome_id": "R-HSA-9828211",
+          "name": "Regulation of TBK1, IKK\u03b5-mediated activation of IRF3, IRF7 upon TLR3 ligation"
+        },
+        {
+          "reactome_id": "R-HSA-3270619",
+          "name": "IRF3-mediated induction of type I IFN"
+        },
+        {
+          "reactome_id": "R-HSA-9013973",
+          "name": "TICAM1-dependent activation of IRF3/IRF7"
+        },
+        {
+          "reactome_id": "R-HSA-1834941",
+          "name": "STING mediated induction of host immune responses"
+        },
+        {
+          "reactome_id": "R-HSA-168927",
+          "name": "TICAM1, RIP1-mediated IKK complex recruitment"
+        },
+        {
+          "reactome_id": "R-HSA-918233",
+          "name": "TRAF3-dependent IRF activation pathway"
+        },
+        {
+          "reactome_id": "R-HSA-3249367",
+          "name": "STAT6-mediated induction of chemokines"
+        },
+        {
+          "reactome_id": "R-HSA-937041",
+          "name": "IKK complex recruitment mediated by RIP1"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "SQSTM1",
+      "ensembl_id": "ENSG00000161011",
+      "target_name": "sequestosome 1",
+      "association_score": 0.823307797148455,
+      "druggability": {
+        "gene_symbol": "SQSTM1",
+        "uniprot_accession": "Q13501",
+        "protein_class": "Unknown",
+        "subcellular_locations": [
+          "Cytoplasmic vesicle, autophagosome",
+          "Preautophagosomal structure",
+          "Cytoplasm, cytosol",
+          "Nucleus, PML body",
+          "Late endosome",
+          "Lysosome",
+          "Nucleus",
+          "Endoplasmic reticulum",
+          "Cytoplasm, myofibril, sarcomere"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 10,
+        "max_phase_drug": 0,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL3977467",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3934789",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3962296",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3939457",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3925906",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "SQSTM1 appears to be a challenging target due to its intracellular location, role as a molecular adapter facilitating complex protein-protein interactions, and the absence of any compounds progressing beyond the discovery phase. While numerous 3D structures are available to support structure-based approaches, the nature of targeting PPIs for this non-enzyme/non-receptor protein implies low druggability by conventional means."
+      },
+      "literature": {
+        "gene_symbol": "SQSTM1",
+        "disease": "amyotrophic lateral sclerosis",
+        "num_recent_papers": 191,
+        "key_findings_summary": "SQSTM1 (p62) is consistently implicated in amyotrophic lateral sclerosis (ALS) due to its critical role in autophagy and stress granule regulation. It is known to bind and be phosphorylated by the ALS-linked gene TBK1, and its function in mediating the elimination of pathological stress granules is crucial. SQSTM1 is an upregulated component of a beneficial autophagy pathway in models of motoneuron degeneration, and impairments in autophagy factors like SQSTM1 contribute to ALS pathogenesis.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "25700176",
+          "36692217",
+          "30335591"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-5205685",
+          "name": "PINK1-PRKN Mediated Mitophagy"
+        },
+        {
+          "reactome_id": "R-HSA-8863678",
+          "name": "Neurodegenerative Diseases"
+        }
+      ],
+      "reasoning": ""
+    }
+  ],
+  "recommendation": "**Recommendation:**\n\nTBK1 represents the most promising immediate drug target due to its high druggability as a kinase, supported by Phase 4 compounds, and its critical role in ALS autophagy and innate immunity. FUS also presents a strong opportunity, evidenced by a Phase 2 clinical compound (Molibresib) and its established role in RNA metabolism dysfunction in ALS. Conversely, while SOD1 and TARDBP are highly validated genetically, their intrinsic druggability and intracellular localization pose significant challenges for small molecule development; alternative modalities like gene silencing are more suitable for these targets. Key risks across these intracellular targets include achieving sufficient cell permeability, selectivity, and avoiding off-target effects, particularly for essential RNA-binding proteins. We recommend prioritizing lead optimization for TBK1 inhibitors and further investigating FUS modulators, alongside continued assessment of gene silencing strategies for SOD1 and TARDBP to address distinct pathogenic mechanisms."
+}

@@ -1,0 +1,282 @@
+{
+  "disease": "GLUT-1 deficiency syndrome",
+  "disease_id": "ENSG00000117394",
+  "targets": [
+    {
+      "gene_symbol": "SLC2A1",
+      "ensembl_id": "ENSG00000117394",
+      "target_name": "solute carrier family 2 member 1",
+      "association_score": 0.8521823225896756,
+      "druggability": {
+        "gene_symbol": "SLC2A1",
+        "uniprot_accession": "P11166",
+        "protein_class": "Belongs to the major facilitator superfamily. Sugar transporter (TC 2.A.1.1) family. Glucose transporter subfamily",
+        "subcellular_locations": [
+          "Cell membrane",
+          "Melanosome",
+          "Photoreceptor inner segment"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 96,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL34259",
+            "pref_name": "METHOTREXATE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1454",
+            "pref_name": "LEVAMISOLE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL36",
+            "pref_name": "PYRIMETHAMINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL429910",
+            "pref_name": "DAPAGLIFLOZIN",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL123292",
+            "pref_name": "CYCLOHEXIMIDE",
+            "max_phase": 2
+          }
+        ],
+        "druggability_verdict": "SLC2A1 is a druggable target given its cell membrane localization, multiple available 3D structures suitable for SBDD, and the existence of numerous known bioactive compounds, including several approved drugs that have reached Phase 4 in clinical development. Targeting membrane transporters can be challenging, but the existing progress suggests tractability."
+      },
+      "literature": {
+        "gene_symbol": "SLC2A1",
+        "disease": "GLUT-1 deficiency syndrome",
+        "num_recent_papers": 15,
+        "key_findings_summary": "Mutations in the SLC2A1 gene, which encodes the glucose transporter protein type 1 (GLUT-1), are the direct cause of GLUT-1 deficiency syndrome (GLUT1-DS). This rare neurometabolic disorder is characterized by impaired glucose transport into the brain, leading to symptoms such as infantile seizures, developmental delay, acquired microcephaly, and distinctive movement and gait abnormalities. Diagnosis is confirmed by genetic testing for SLC2A1 mutations, and a ketogenic diet is the primary treatment strategy.",
+        "support_level": "supporting",
+        "top_pmids": [
+          "40738011",
+          "10980529",
+          "28443597"
+        ]
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-5619043",
+          "name": "Defective SLC2A1 causes GLUT1 deficiency syndrome 1 (GLUT1DS1)"
+        },
+        {
+          "reactome_id": "R-HSA-5619068",
+          "name": "Defective SLC2A10 causes arterial tortuosity syndrome (ATS)"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "ATP1A3",
+      "ensembl_id": "ENSG00000105409",
+      "target_name": "ATPase Na+/K+ transporting subunit alpha 3",
+      "association_score": 0.061017993322191884,
+      "druggability": {
+        "gene_symbol": "ATP1A3",
+        "uniprot_accession": "P13637",
+        "protein_class": "Belongs to the cation transport ATPase (P-type) (TC 3.A.3) family. Type IIC subfamily",
+        "subcellular_locations": [
+          "Cell membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 96,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL1751",
+            "pref_name": "DIGOXIN",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1502",
+            "pref_name": "PANTOPRAZOLE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL254219",
+            "pref_name": "DIGITOXIN",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL303753",
+            "pref_name": null,
+            "max_phase": 0
+          },
+          {
+            "molecule_chembl_id": "CHEMBL66256",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "ATP1A3 is highly druggable, being a membrane-bound enzyme with multiple existing 3D structures. The presence of approved drugs like Digoxin and Digitoxin, which directly target this protein family, confirms its established therapeutic tractability."
+      },
+      "literature": {
+        "gene_symbol": "ATP1A3",
+        "disease": "GLUT-1 deficiency syndrome",
+        "num_recent_papers": 0,
+        "key_findings_summary": "No papers found for this gene-disease pair.",
+        "support_level": "inconclusive",
+        "top_pmids": []
+      },
+      "pathways": [],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "HPRT1",
+      "ensembl_id": "ENSG00000165704",
+      "target_name": "hypoxanthine phosphoribosyltransferase 1",
+      "association_score": 0.05616073875146281,
+      "druggability": {
+        "gene_symbol": "HPRT1",
+        "uniprot_accession": "P00492",
+        "protein_class": "Belongs to the purine/pyrimidine phosphoribosyltransferase family",
+        "subcellular_locations": [
+          "Cytoplasm"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 79,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL1467",
+            "pref_name": "ALLOPURINOL",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL1425",
+            "pref_name": "MERCAPTOPURINE ANHYDROUS",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL727",
+            "pref_name": "THIOGUANINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL219568",
+            "pref_name": "GUANINE",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL333989",
+            "pref_name": null,
+            "max_phase": 0
+          }
+        ],
+        "druggability_verdict": "HPRT1 is a highly druggable target due to its enzymatic nature, extensive structural data, and the existence of multiple approved drugs (e.g., Allopurinol) that modulate its activity or impact the purine salvage pathway, validating its therapeutic potential."
+      },
+      "literature": {
+        "gene_symbol": "HPRT1",
+        "disease": "GLUT-1 deficiency syndrome",
+        "num_recent_papers": 0,
+        "key_findings_summary": "No papers found for this gene-disease pair.",
+        "support_level": "inconclusive",
+        "top_pmids": []
+      },
+      "pathways": [
+        {
+          "reactome_id": "R-HSA-9734281",
+          "name": "Defective HPRT1 disrupts guanine and hypoxanthine salvage"
+        },
+        {
+          "reactome_id": "R-HSA-9735804",
+          "name": "Diseases of nucleotide metabolism"
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "ARX",
+      "ensembl_id": "ENSG00000004848",
+      "target_name": "aristaless related homeobox",
+      "association_score": 0.05551569049886744,
+      "druggability": {
+        "gene_symbol": "ARX",
+        "uniprot_accession": "Q96QS3",
+        "protein_class": "Belongs to the paired homeobox family. Bicoid subfamily",
+        "subcellular_locations": [
+          "Nucleus"
+        ],
+        "has_3d_structure": false,
+        "num_known_compounds": 0,
+        "max_phase_drug": 0,
+        "top_compounds": [],
+        "druggability_verdict": "ARX, a nuclear transcription factor with no known 3D structures or bioactive compounds, represents a highly challenging drug target due to its protein class and lack of any established chemical starting points or structural data for drug design."
+      },
+      "literature": {
+        "gene_symbol": "ARX",
+        "disease": "GLUT-1 deficiency syndrome",
+        "num_recent_papers": 0,
+        "key_findings_summary": "No papers found for this gene-disease pair.",
+        "support_level": "inconclusive",
+        "top_pmids": []
+      },
+      "pathways": [],
+      "reasoning": ""
+    },
+    {
+      "gene_symbol": "SCN1A",
+      "ensembl_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "association_score": 0.05159930205608763,
+      "druggability": {
+        "gene_symbol": "SCN1A",
+        "uniprot_accession": "P35498",
+        "protein_class": "Belongs to the sodium channel (TC 1.A.1.10) family. Nav1.1/SCN1A subfamily",
+        "subcellular_locations": [
+          "Cell membrane"
+        ],
+        "has_3d_structure": true,
+        "num_known_compounds": 74,
+        "max_phase_drug": 4,
+        "top_compounds": [
+          {
+            "molecule_chembl_id": "CHEMBL1200606",
+            "pref_name": "MEXILETINE HYDROCHLORIDE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL741",
+            "pref_name": "LAMOTRIGINE",
+            "max_phase": 4
+          },
+          {
+            "molecule_chembl_id": "CHEMBL405821",
+            "pref_name": "SENICAPOC",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL507974",
+            "pref_name": "TETRODOTOXIN",
+            "max_phase": 3
+          },
+          {
+            "molecule_chembl_id": "CHEMBL3707392",
+            "pref_name": "ELECLAZINE",
+            "max_phase": 3
+          }
+        ],
+        "druggability_verdict": "SCN1A is highly druggable, being a cell membrane-localized voltage-gated sodium channel with an existing 3D structure and several known bioactive compounds, including drugs like Mexiletine and Lamotrigine that have reached clinical phase 4."
+      },
+      "literature": {
+        "gene_symbol": "SCN1A",
+        "disease": "GLUT-1 deficiency syndrome",
+        "num_recent_papers": 1,
+        "key_findings_summary": "This abstract describes a case of Glucose-transporter-1 deficiency syndrome (GLUT1-DS) co-occurring with hemiplegic migraine (HM). While SCN1A is mentioned as one of several genes known to cause HM, the specific patient in this report with GLUT1-DS and HM was found to have a CACNA1A mutation. The abstract does not present any direct evidence linking SCN1A to GLUT1-DS.",
+        "support_level": "inconclusive",
+        "top_pmids": [
+          "34135856"
+        ]
+      },
+      "pathways": [],
+      "reasoning": ""
+    }
+  ],
+  "recommendation": "**Recommendation:**\n\nSLC2A1 is unequivocally the most promising drug target for GLUT-1 deficiency syndrome, given its direct causal role in the disease etiology and established druggability. Its high association score (0.852) and extensive literature confirm that mutations in SLC2A1 directly impair brain glucose transport. While targeting this membrane transporter carries risks of systemic off-target effects, SLC2A1's structural data, existing bioactive compounds, and approved drugs that have reached Phase 4 indicate therapeutic tractability. We recommend prioritizing the development of specific, brain-penetrant modulators for SLC2A1, followed by rigorous preclinical validation, as other identified targets lack direct disease association."
+}
