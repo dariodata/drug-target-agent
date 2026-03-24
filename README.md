@@ -24,6 +24,7 @@ flowchart TD
 
     Fork --> DA["Druggability<br/>Assessor"]:::agent
     Fork --> LV["Literature<br/>Validator"]:::agent
+    Fork --> RC["Reactome<br/>fetch_pathways"]:::api
 
     %% Stage 2 — Parallel assessment
     DA --> UP["UniProt<br/>fetch_protein_info"]:::api
@@ -33,10 +34,16 @@ flowchart TD
     UP -- "DruggabilityProfile" --> Merge
     CH --> Merge
     PM -- "LiteratureEvidence" --> Merge
+    RC -- "Pathways" --> Merge
 
     %% Stage 3 — Synthesis
     Merge{{"aggregate"}}:::orchestrator -- "step 3 · synthesize" --> LLM["LLM<br/>Synthesis"]:::llm
     LLM --> Report(["Ranked Report<br/>+ Recommendation"]):::output
+
+    %% Stage 4 — Persistence
+    Report -- "JSON + Markdown" --> Neo["Neo4j<br/>graph database"]:::db
+
+    classDef db fill:#a855f7,stroke:#7e22ce,color:#fff
 
     classDef agent fill:#2d9c6f,stroke:#1a7a50,color:#fff
     classDef orchestrator fill:#7b68ee,stroke:#5a4bcf,color:#fff
@@ -47,13 +54,14 @@ flowchart TD
 
 ### Why Agents?
 
-Each agent has **different tools and reasoning**: 
+Each agent has **different tools and reasoning**:
 - Gene Hunter queries genomics databases
 - Druggability Assessor interprets protein structure and compound data
 - Literature Validator reads and classifies paper abstracts
+- Reactome tool fetches biological pathways each gene is involved in
 - Orchestrator decides how to integrate the different evidence across sources
 
-This architecture is modular: adding a Clinical Trials agent or Pathway Analysis agent requires no changes to existing agents.
+This architecture is modular: adding a Clinical Trials agent requires no changes to existing agents.
 
 ## Quick Start
 
@@ -73,6 +81,7 @@ uv run python -m src.orchestrator "Alzheimer disease"
 | Open Targets | No | Free, no registration |
 | UniProt | No | Free, no registration |
 | ChEMBL | No | Free, no registration |
+| Reactome | No | Free, no registration |
 | PubMed | Email only | Just set `NCBI_EMAIL` in `.env` |
 | OpenAI | Yes | [platform.openai.com](https://platform.openai.com) |
 | Neo4j | Password | Local instance or [Neo4j Aura](https://neo4j.com/cloud/aura/) free tier |
@@ -83,6 +92,7 @@ uv run python -m src.orchestrator "Alzheimer disease"
 src/
 ├── orchestrator.py          # Main pipeline: sequential + parallel fan-out
 ├── models.py                # Pydantic models for structured outputs
+├── neo4j_loader.py          # Ingest JSON reports into Neo4j
 ├── agents/
 │   ├── gene_hunter.py       # Finds disease-gene associations
 │   ├── druggability.py      # Assesses target tractability
@@ -91,7 +101,8 @@ src/
     ├── open_targets.py      # Open Targets GraphQL
     ├── uniprot.py           # UniProt REST
     ├── chembl.py            # ChEMBL REST
-    └── pubmed.py            # NCBI E-utilities
+    ├── pubmed.py            # NCBI E-utilities
+    └── reactome.py          # Reactome pathway search
 ```
 
 ## Testing
@@ -143,4 +154,4 @@ Uniqueness constraints are created automatically on first run (Disease.efo_id, G
 - Single association source: Only Open Targets for gene-disease links (could add GWAS Catalog, DisGeNET)
 - Abstracts only: PubMed search uses abstracts, not full text
 - No clinical trial data: Could add ClinicalTrials.gov agent
-- Neo4j graph is loaded and can be explored in graph explorer but is not yet fully queryable from a web UI (planned)
+- Neo4j web UI for querying the graph is planned
