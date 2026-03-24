@@ -19,6 +19,19 @@
                 </p>
               </div>
 
+              <!-- What You're Seeing -->
+              <section class="intro-section">
+                <div class="intro-label warm">What You're Seeing</div>
+                <p class="intro-text">
+                  This frontend visualizes a knowledge graph accumulated from
+                  previous agent runs. Each run analyzes a disease and produces a
+                  report of ranked drug targets, which gets ingested into a Neo4j
+                  graph database. The graph you can explore here connects diseases,
+                  genes, proteins, compounds, papers, and pathways across all
+                  analyzed diseases. Pipeline runs are done locally for now.
+                </p>
+              </section>
+
               <!-- The Problem -->
               <section class="intro-section">
                 <div class="intro-label blue">The Problem</div>
@@ -367,7 +380,7 @@ onUnmounted(() => {
   margin-bottom: 10px;
 }
 .intro-tagline {
-  color: var(--text-dim);
+  color: var(--text);
   font-size: 13px;
   line-height: 1.65;
   max-width: 460px;
@@ -394,7 +407,7 @@ onUnmounted(() => {
 .intro-label.gray { color: var(--text-dim); }
 
 .intro-text {
-  color: var(--text-dim);
+  color: #bfc3ce;
   font-size: 12px;
   line-height: 1.7;
 }
@@ -430,11 +443,11 @@ onUnmounted(() => {
 .arch-sub {
   display: block;
   font-size: 8px;
-  color: var(--text-faint);
+  color: var(--text-dim);
   margin-top: 2px;
 }
 .arch-arrow {
-  color: var(--text-faint);
+  color: var(--text-dim);
   font-size: 14px;
   flex-shrink: 0;
 }
@@ -479,12 +492,12 @@ onUnmounted(() => {
 }
 .finding-compounds {
   font-size: 9px;
-  color: var(--text-dim);
+  color: #bfc3ce;
   margin-top: 2px;
 }
 .finding-detail {
   font-size: 9px;
-  color: var(--text-faint);
+  color: var(--text-dim);
   margin-top: 4px;
   line-height: 1.4;
 }
@@ -528,7 +541,7 @@ onUnmounted(() => {
 }
 .tech-role {
   font-size: 9px;
-  color: var(--text-faint);
+  color: var(--text-dim);
 }
 
 /* Data sources */
@@ -544,7 +557,7 @@ onUnmounted(() => {
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 10px;
-  color: var(--text-dim);
+  color: #bfc3ce;
 }
 .source-free {
   font-size: 8px;
@@ -560,7 +573,7 @@ onUnmounted(() => {
 }
 .limitations-list li {
   font-size: 11px;
-  color: var(--text-dim);
+  color: #bfc3ce;
   padding: 4px 0 4px 16px;
   position: relative;
   line-height: 1.5;
@@ -573,7 +586,7 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--text-faint);
+  background: var(--text-dim);
 }
 
 /* Links */
@@ -604,7 +617,7 @@ onUnmounted(() => {
 }
 .link-desc {
   font-size: 9px;
-  color: var(--text-faint);
+  color: var(--text-dim);
   line-height: 1.4;
 }
 
@@ -633,7 +646,7 @@ onUnmounted(() => {
 }
 .cta-hint {
   font-size: 10px;
-  color: var(--text-faint);
+  color: var(--text-dim);
   margin-top: 6px;
 }
 

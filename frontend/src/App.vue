@@ -6,6 +6,7 @@
         <router-link to="/" exact-active-class="active">Graph</router-link>
         <router-link to="/dashboard" active-class="active">Dashboard</router-link>
         <router-link to="/compare" active-class="active">Compare</router-link>
+        <a href="https://www.arcosdiaz.com" target="_blank" rel="noopener">Blog</a>
       </div>
     </nav>
     <main>
