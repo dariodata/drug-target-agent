@@ -2,6 +2,8 @@
 
 A multi-agent system that autonomously identifies and ranks drug targets for a given disease. Takes a disease name, queries public bioinformatics databases, and produces a ranked report with druggability assessments and literature evidence. [See the full blog post.](blog-post.md)
 
+Explore the results interactively at [bio.arcosdiaz.com](https://bio.arcosdiaz.com) (work in progress).
+
 
 **Run the pipeline to generate a report:**
 ```uv run python -m src.orchestrator "Alzheimer disease"```
@@ -154,4 +156,3 @@ Uniqueness constraints are created automatically on first run (Disease.efo_id, G
 - Single association source: Only Open Targets for gene-disease links (could add GWAS Catalog, DisGeNET)
 - Abstracts only: PubMed search uses abstracts, not full text
 - No clinical trial data: Could add ClinicalTrials.gov agent
-- Neo4j web UI for querying the graph is planned
