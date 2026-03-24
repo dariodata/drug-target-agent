@@ -18,6 +18,9 @@
           <option value="grid">Grid</option>
           <option value="breadthfirst">Hierarchy</option>
         </select>
+        <button class="info-btn" title="About this project" @click="showIntro = true">
+          <span class="info-icon">ℹ</span> About
+        </button>
       </div>
     </div>
 
@@ -63,6 +66,9 @@
       <span class="info-sep">&middot;</span>
       <span>{{ filteredGraph.edges.length }} edges</span>
     </div>
+
+    <!-- Intro overlay -->
+    <IntroOverlay :visible="showIntro" @close="showIntro = false" />
   </div>
 </template>
 
@@ -72,11 +78,15 @@ import { useRoute } from 'vue-router'
 import api from '../api/client.js'
 import GraphCanvas from '../components/GraphCanvas.vue'
 import DetailPanel from '../components/DetailPanel.vue'
+import IntroOverlay from '../components/IntroOverlay.vue'
 
 const route = useRoute()
 const loading = ref(true)
 const graphData = ref({ nodes: [], edges: [] })
 const layoutName = ref('d3-force')
+
+// Intro overlay state
+const showIntro = ref(true)
 
 // Panel state
 const panelOpen = ref(false)
@@ -175,8 +185,12 @@ function onGraphTransitionEnd(e) {
 }
 
 function onKeydown(e) {
-  if (e.key === 'Escape' && panelOpen.value) {
-    closePanel()
+  if (e.key === 'Escape') {
+    if (showIntro.value) {
+      showIntro.value = false
+    } else if (panelOpen.value) {
+      closePanel()
+    }
   }
 }
 
@@ -304,6 +318,27 @@ onUnmounted(() => {
   background: transparent;
   border: none;
   color: var(--text);
+}
+.toolbar-controls .info-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: none;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.toolbar-controls .info-btn:hover {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.toolbar-controls .info-btn .info-icon {
+  font-size: 13px;
 }
 
 /* ── Split container ── */
