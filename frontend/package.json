@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "private": true,
+  "author": "Dario Arcos-Diaz",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

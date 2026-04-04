@@ -16,6 +16,9 @@
         </transition>
       </router-view>
     </main>
+    <footer class="site-footer">
+      Built by Dario Arcos-Diaz
+    </footer>
   </div>
 </template>
 
